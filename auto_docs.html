@@ -1,0 +1,295 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Documentation Generation and Hosting &mdash; MachEval 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="MachEval" href="modules.html" />
+    <link rel="prev" title="MachEval Contribution Guidelines" href="documentation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> MachEval
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Guidelines:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="documentation.html"><em>MachEval</em> Contribution Guidelines</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Documentation Generation and Hosting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-sphinx">Using Sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hosting-documentation-online">Hosting Documentation Online</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#read-the-docs">Read the Docs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#github-pages">Github Pages</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Code:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html"><em>MachEval</em></a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MachEval</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Documentation Generation and Hosting</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/auto_docs.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="documentation-generation-and-hosting">
+<span id="docgen"></span><h1>Documentation Generation and Hosting<a class="headerlink" href="#documentation-generation-and-hosting" title="Permalink to this headline">¶</a></h1>
+<p>Automated generation of easily readable, user friendly, and indexed documentation makes a solid case for using the Sphinx tool
+for <em>MachEval</em>’s documentation needs. After generating the required documents, the corresponding files can be hosted on a
+platform online to share with a broader audience. The steps involved in this work flow are discussed below.</p>
+<div class="section" id="using-sphinx">
+<h2>Using Sphinx<a class="headerlink" href="#using-sphinx" title="Permalink to this headline">¶</a></h2>
+<p>Sphinx is a tool that makes the creation of pretty, indexed documentation easy. One of the biggest advantages of using Sphinx
+with <em>MachEval</em> is its autodocs feature which creates documentation directly from the docstrings written within the code. A
+detailed explaination of setting up and running Sphinx on a system is provided <a class="reference external" href="https://www.sphinx-doc.org/en/master/tutorial/index.html">here</a>.
+This <a class="reference external" href="https://techwritingmatters.com/documenting-with-sphinx-tutorial-intro-overview">tutorial</a> also provides a great intro
+to Sphinx and the reStructuredText (reST) markup language used by the tool. A general idea of the workflow involved in Sphinx
+doc generation is provided below:</p>
+<p>1. Install Sphinx on your system with the following command - <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">Sphinx</span></code>. Users are recommended to install Sphinx
+ver 1.8.5. The previous command can be modified as <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">Sphinx==1.8.5</span></code> to install this specific version.</p>
+<p>2. Navigate to the module for which documentation is to be generated. Creation of a <code class="docutils literal notranslate"><span class="pre">docs</span></code> folder within the module is
+recommended to segregate the documentation files from the rest of the module.  Run <code class="docutils literal notranslate"><span class="pre">sphinx-quickstart</span></code> command from within
+the docs folder. You will be asked to type in responses to certain prompts. Follow the instructions provided <a class="reference external" href="https://techwritingmatters.com/documenting-with-sphinx-tutorial-part-1-setting-up">here</a>.
+Note that setting <code class="docutils literal notranslate"><span class="pre">y</span></code> for the autodoc prompt enables the automatic creation of documentation from docstrings.</p>
+<p>3. Ensure that the expected files and folders have been created. This includes the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code>, <code class="docutils literal notranslate"><span class="pre">Windows</span> <span class="pre">command</span> <span class="pre">file</span></code> (if
+you are on Windows), <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>, and the <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> files.</p>
+<p>4. Add additional documents if required. The <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> file is the master documentation file. Modify this file as required to
+change the documentation structure, add introdutory text, and more. This <a class="reference external" href="https://techwritingmatters.com/documenting-with-sphinx-tutorial-part-2-implementation">link</a>
+provides a good introduction to the <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> file and on reST syntax.</p>
+<p>5. Modify the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file as required. Make sure the Python files for which documentation is to be generated can be
+accessed from within this file. The theme of the HTML pages which will be generated can be set within this file as well.
+Refer to this <a class="reference external" href="https://techwritingmatters.com/documenting-with-sphinx-tutorial-part-2-implementation">link</a> for more
+information.</p>
+<p>6. To create documentation from docstrings, run the <code class="docutils literal notranslate"><span class="pre">sphinx-apidoc</span> <span class="pre">-o</span></code> <a class="reference external" href="https://www.sphinx-doc.org/en/master/man/sphinx-apidoc.html?highlight=sphinx%20apidoc">command</a>
+from the Command Terminal. This command should be executed with the output and input directories as arguments
+<code class="docutils literal notranslate"><span class="pre">sphinx-apidoc</span> <span class="pre">-o</span> <span class="pre">out_dir</span> <span class="pre">in_dir</span></code>. Again, the input directory should be the folder where the Python files reside and the
+output folder will be the location of the <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> file.</p>
+<p>7. Finally, navigate to the docs folder from the Command / Anaconda Prompt terminal and run the <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> command. Go
+within the build folder, open the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file and ensure the documentation is as desired.</p>
+</div>
+<div class="section" id="hosting-documentation-online">
+<h2>Hosting Documentation Online<a class="headerlink" href="#hosting-documentation-online" title="Permalink to this headline">¶</a></h2>
+<p>After ensuring the documents generated by Sphinx are in order, the files can be hosted online for easily sharing the amazing
+documentation you just created with the rest of the world. While there are many ways of achieving this, two methods, both of
+which involve integration with Github, are provided below.</p>
+<div class="section" id="read-the-docs">
+<h3>Read the Docs<a class="headerlink" href="#read-the-docs" title="Permalink to this headline">¶</a></h3>
+<p>Read the Docs offers free, real-time updated, document hosting. Simply create an account on <a class="reference external" href="https://readthedocs.org/">https://readthedocs.org/</a> and
+import the Git repository you wish to host documentation for. Refer to this link for more information on getting started with
+Read the Docs. Pushing the HTML files on to Git is not required with this hosting platform as Read the Docs regenerates the
+doc files everytime there is a git push. Only the source folder and the contents therein need to be updated as and when
+required. This ensures that the documentation remains updated always.</p>
+<p>Advantages</p>
+<ul class="simple">
+<li>Real-time document updation</li>
+<li>Pushing contents of the build folder on to Git is not required</li>
+</ul>
+<p>Disadvantages</p>
+<ul class="simple">
+<li>Support for private Git repositories available only with Read the Docs for Business</li>
+</ul>
+</div>
+<div class="section" id="github-pages">
+<h3>Github Pages<a class="headerlink" href="#github-pages" title="Permalink to this headline">¶</a></h3>
+<p>Github Pages provides a way of hosting Github repositories on websites. This platform can also be used to host the
+documentation generated with Sphinx. More information on Github Pages can be found <a class="reference external" href="https://pages.github.com/">here</a>.</p>
+<p>In order to host Sphinx generated documentation on this platform, the HTML buiid files must be pushed onto Git. These files
+are usually placed within a different branch, typically call gh-pages, to segregate the code from the doc files. Github Pages
+basically looks at the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file and re-creates the website from there.</p>
+<p>Advantages</p>
+<ul class="simple">
+<li>Support for both public and private Git repositories available with Github Pro</li>
+</ul>
+<p>Disadvantages</p>
+<ul class="simple">
+<li>HTML files must be built from the source .rst files and pushed to the repo each time there is any change in documentation, including changes to docstrings</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="modules.html" class="btn btn-neutral float-right" title="MachEval" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="documentation.html" class="btn btn-neutral float-left" title="MachEval Contribution Guidelines" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Severson Group.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,461 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>mach_eval module &mdash; MachEval 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="mach_opt module" href="mach_opt.html" />
+    <link rel="prev" title="desopt module" href="desopt.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> MachEval
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Guidelines:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html"><em>MachEval</em> Contribution Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_docs.html">Documentation Generation and Hosting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Code:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html"><em>MachEval</em></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="architects.html">architects package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="desopt.html">desopt module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">mach_eval module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mach_opt.html">mach_opt module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MachEval</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html"><em>MachEval</em></a> &raquo;</li>
+        
+      <li>mach_eval module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/mach_eval.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-mach_eval">
+<span id="mach-eval-module"></span><h1>mach_eval module<a class="headerlink" href="#module-mach_eval" title="Permalink to this headline">¶</a></h1>
+<p>Module holding base classes required for machine evaluation.</p>
+<p>This module holds the parent classes required for machine evaluation. The module structure has been constructed in
+manner suitable for both machine optimization and evaluation.</p>
+<dl class="class">
+<dt id="mach_eval.AnalysisStep">
+<em class="property">class </em><code class="descclassname">mach_eval.</code><code class="descname">AnalysisStep</code><span class="sig-paren">(</span><em>problem_definition</em>, <em>analyzer</em>, <em>post_analyzer</em><span class="sig-paren">)</span><a class="headerlink" href="#mach_eval.AnalysisStep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mach_eval.EvaluationStep" title="mach_eval.EvaluationStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">mach_eval.EvaluationStep</span></code></a></p>
+<p>Class representing a step which involves detailed analysis.</p>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd>problem_definition: class or object defining the problem to be analyzed. This attribute acts as the interface
+between the machine design and the analyzer.
+analyzer: class or object which evaluates any aspect of a machine design.
+post_analyzer: class or object which processes the results obtained from the analyzer and packages in a form
+suitable for subsequent steps.</dd>
+</dl>
+<dl class="method">
+<dt id="mach_eval.AnalysisStep.step">
+<code class="descname">step</code><span class="sig-paren">(</span><em>state_in: mach_eval.State</em><span class="sig-paren">)</span> &#x2192; [typing.Any, 'State']<a class="headerlink" href="#mach_eval.AnalysisStep.step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to evaluate design using a analyzer</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>state_in: input state which is to be evaluated.</dd>
+<dt>Returns:</dt>
+<dd>results: Results obtained from the analyzer.
+state_out: Output state to be used by the next step involved in the machine design evaluation.</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mach_eval.Analyzer">
+<em class="property">class </em><code class="descclassname">mach_eval.</code><code class="descname">Analyzer</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mach_eval.Analyzer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Protocol</span></code></p>
+<p>Protocol for an analyzer</p>
+<dl class="method">
+<dt id="mach_eval.Analyzer.analyze">
+<code class="descname">analyze</code><span class="sig-paren">(</span><em>problem: mach_eval.Problem</em><span class="sig-paren">)</span> &#x2192; Any<a class="headerlink" href="#mach_eval.Analyzer.analyze" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mach_eval.Architect">
+<em class="property">class </em><code class="descclassname">mach_eval.</code><code class="descname">Architect</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mach_eval.Architect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Protocol</span></code></p>
+<p>Base class for all machine design creating architect classes.</p>
+<p>Child classes of Architect establish the interface between a machine object and the design framework. All the math
+for calculating an initial machine design is done within child classes of this class, and a design dictionary is
+passed into the Machine object class on creation.</p>
+<dl class="method">
+<dt id="mach_eval.Architect.create_new_design">
+<code class="descname">create_new_design</code><span class="sig-paren">(</span><em>input_arguments: Any</em><span class="sig-paren">)</span> &#x2192; mach_eval.Machine<a class="headerlink" href="#mach_eval.Architect.create_new_design" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new Machine object and returns it</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>input_arguments: Sny</dd>
+<dt>Returns:</dt>
+<dd>machine: Machine</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mach_eval.Conditions">
+<em class="property">class </em><code class="descclassname">mach_eval.</code><code class="descname">Conditions</code><a class="headerlink" href="#mach_eval.Conditions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to hold state conditions during machine evaluation.</p>
+<p>This is a dummy class whose purpose is hold attributes required by subsequent steps involved in evaluating a machine
+design.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="mach_eval.Error">
+<em class="property">exception </em><code class="descclassname">mach_eval.</code><code class="descname">Error</code><a class="headerlink" href="#mach_eval.Error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Base class for exceptions in this module.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="mach_eval.EvaluationStep">
+<em class="property">class </em><code class="descclassname">mach_eval.</code><code class="descname">EvaluationStep</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mach_eval.EvaluationStep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Protocol</span></code></p>
+<p>Protocol for an evaluation step</p>
+<dl class="method">
+<dt id="mach_eval.EvaluationStep.step">
+<code class="descname">step</code><span class="sig-paren">(</span><em>state_in: mach_eval.State</em><span class="sig-paren">)</span> &#x2192; [typing.Any, 'State']<a class="headerlink" href="#mach_eval.EvaluationStep.step" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mach_eval.Machine">
+<em class="property">class </em><code class="descclassname">mach_eval.</code><code class="descname">Machine</code><a class="headerlink" href="#mach_eval.Machine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Abstract base class for Machine objects</p>
+<dl class="method">
+<dt id="mach_eval.Machine.check_required_properties">
+<code class="descname">check_required_properties</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mach_eval.Machine.check_required_properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mach_eval.Machine.get_missing_properties">
+<code class="descname">get_missing_properties</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mach_eval.Machine.get_missing_properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mach_eval.MachineDesign">
+<em class="property">class </em><code class="descclassname">mach_eval.</code><code class="descname">MachineDesign</code><span class="sig-paren">(</span><em>machine: mach_eval.Machine</em>, <em>settings: Any</em><span class="sig-paren">)</span><a class="headerlink" href="#mach_eval.MachineDesign" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="desopt.html#desopt.Design" title="desopt.Design"><code class="xref py py-class docutils literal notranslate"><span class="pre">desopt.Design</span></code></a></p>
+<p>Class representing a complete machine design, includes machine physical description and operating conditions.</p>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd>machine: Holds information on machine dimensions, materials, and nameplate specs
+settings: Operating conditions of machine. Can include speed, current, expected power / torque etc.</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="mach_eval.MachineDesigner">
+<em class="property">class </em><code class="descclassname">mach_eval.</code><code class="descname">MachineDesigner</code><span class="sig-paren">(</span><em>arch: mach_eval.Architect</em>, <em>settings_handler: mach_eval.SettingsHandler</em><span class="sig-paren">)</span><a class="headerlink" href="#mach_eval.MachineDesigner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="desopt.html#desopt.Designer" title="desopt.Designer"><code class="xref py py-class docutils literal notranslate"><span class="pre">desopt.Designer</span></code></a></p>
+<p>Class representing a machine designer.</p>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd>arch: Class which converts optimization free variables to a complete set of machine dimensions required to
+fully define a machine.
+settings_handler: Class which converts optimization free variable to machine operating conditions.</dd>
+</dl>
+<dl class="method">
+<dt id="mach_eval.MachineDesigner.create_design">
+<code class="descname">create_design</code><span class="sig-paren">(</span><em>x: tuple</em><span class="sig-paren">)</span> &#x2192; desopt.Design<a class="headerlink" href="#mach_eval.MachineDesigner.create_design" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a machine design from free variables.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>x: Tuple of design free variables. Should be defined in a particular sequence based on arch and settings_handler</dd>
+<dt>Returns:</dt>
+<dd>A complete machine design including machine physical description and operating conditions.</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mach_eval.MachineEvaluator">
+<em class="property">class </em><code class="descclassname">mach_eval.</code><code class="descname">MachineEvaluator</code><span class="sig-paren">(</span><em>steps: List[EvaluationStep]</em><span class="sig-paren">)</span><a class="headerlink" href="#mach_eval.MachineEvaluator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="desopt.html#desopt.Evaluator" title="desopt.Evaluator"><code class="xref py py-class docutils literal notranslate"><span class="pre">desopt.Evaluator</span></code></a></p>
+<p>Wrapper class for all steps involved in analyzing a MachineDesign</p>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd>steps: Sequential list of steps involved in evaluating a MachineDesign</dd>
+</dl>
+<dl class="method">
+<dt id="mach_eval.MachineEvaluator.evaluate">
+<code class="descname">evaluate</code><span class="sig-paren">(</span><em>design: Any</em><span class="sig-paren">)</span><a class="headerlink" href="#mach_eval.MachineEvaluator.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluates a MachineDesign</p>
+<p>Evaluates a MachineDesign with the list of evaluation steps that the class object was initialized with</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>design: MachineDesign object to be evaluated</dd>
+<dt>Returns:</dt>
+<dd>full_results: List of results obtained from each evaluation step</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="mach_eval.MissingValueError">
+<em class="property">exception </em><code class="descclassname">mach_eval.</code><code class="descname">MissingValueError</code><span class="sig-paren">(</span><em>expression</em>, <em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#mach_eval.MissingValueError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#mach_eval.Error" title="mach_eval.Error"><code class="xref py py-class docutils literal notranslate"><span class="pre">mach_eval.Error</span></code></a></p>
+<p>Exception raised for errors in the input.</p>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd>expression – input expression in which the error occurred
+message – explanation of the error</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="mach_eval.PostAnalyzer">
+<em class="property">class </em><code class="descclassname">mach_eval.</code><code class="descname">PostAnalyzer</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mach_eval.PostAnalyzer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Protocol</span></code></p>
+<p>Protocol for a post analyzer</p>
+<dl class="method">
+<dt id="mach_eval.PostAnalyzer.get_next_state">
+<code class="descname">get_next_state</code><span class="sig-paren">(</span><em>results: Any</em>, <em>state_in: mach_eval.State</em><span class="sig-paren">)</span> &#x2192; mach_eval.State<a class="headerlink" href="#mach_eval.PostAnalyzer.get_next_state" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mach_eval.Problem">
+<em class="property">class </em><code class="descclassname">mach_eval.</code><code class="descname">Problem</code><span class="sig-paren">(</span><em>machine</em>, <em>op</em><span class="sig-paren">)</span><a class="headerlink" href="#mach_eval.Problem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="mach_eval.ProblemDefinition">
+<em class="property">class </em><code class="descclassname">mach_eval.</code><code class="descname">ProblemDefinition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mach_eval.ProblemDefinition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Protocol</span></code></p>
+<p>Protocol for a problem definition</p>
+<dl class="method">
+<dt id="mach_eval.ProblemDefinition.get_problem">
+<code class="descname">get_problem</code><span class="sig-paren">(</span><em>state: mach_eval.State</em><span class="sig-paren">)</span> &#x2192; mach_eval.Problem<a class="headerlink" href="#mach_eval.ProblemDefinition.get_problem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mach_eval.SettingsHandler">
+<em class="property">class </em><code class="descclassname">mach_eval.</code><code class="descname">SettingsHandler</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mach_eval.SettingsHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Protocol</span></code></p>
+<dl class="method">
+<dt id="mach_eval.SettingsHandler.get_settings">
+<code class="descname">get_settings</code><span class="sig-paren">(</span><em>x: tuple</em><span class="sig-paren">)</span><a class="headerlink" href="#mach_eval.SettingsHandler.get_settings" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mach_eval.State">
+<em class="property">class </em><code class="descclassname">mach_eval.</code><code class="descname">State</code><span class="sig-paren">(</span><em>design: desopt.Design</em>, <em>conditions: mach_eval.Conditions</em><span class="sig-paren">)</span><a class="headerlink" href="#mach_eval.State" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to hold the state of machine evaluation over each evaluation step.</p>
+<p>The purpose of this class is to hold the Machine object and conditions required for subsequent steps involved in
+evaluating a machine design.</p>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd>design: machine design used by the next step
+conditions: additional information required for subsequent evaluation steps</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="mach_opt.html" class="btn btn-neutral float-right" title="mach_opt module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="desopt.html" class="btn btn-neutral float-left" title="desopt module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Severson Group.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

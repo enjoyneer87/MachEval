@@ -1,0 +1,307 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>mach_opt module &mdash; MachEval 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="mach_eval module" href="mach_eval.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> MachEval
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Guidelines:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html"><em>MachEval</em> Contribution Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_docs.html">Documentation Generation and Hosting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Code:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html"><em>MachEval</em></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="architects.html">architects package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="desopt.html">desopt module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mach_eval.html">mach_eval module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">mach_opt module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MachEval</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html"><em>MachEval</em></a> &raquo;</li>
+        
+      <li>mach_opt module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/mach_opt.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-mach_opt">
+<span id="mach-opt-module"></span><h1>mach_opt module<a class="headerlink" href="#module-mach_opt" title="Permalink to this headline">¶</a></h1>
+<p>Created on Mon Apr 19 09:43:59 2021</p>
+<p>&#64;author: Martin Johnson</p>
+<dl class="class">
+<dt id="mach_opt.DataHandler">
+<em class="property">class </em><code class="descclassname">mach_opt.</code><code class="descname">DataHandler</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mach_opt.DataHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Protocol</span></code></p>
+<dl class="method">
+<dt id="mach_opt.DataHandler.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>design: mach_opt.Design</em>, <em>fullResults</em>, <em>objs</em><span class="sig-paren">)</span><a class="headerlink" href="#mach_opt.DataHandler.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mach_opt.Design">
+<em class="property">class </em><code class="descclassname">mach_opt.</code><code class="descname">Design</code><a class="headerlink" href="#mach_opt.Design" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="mach_opt.Designer">
+<em class="property">class </em><code class="descclassname">mach_opt.</code><code class="descname">Designer</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mach_opt.Designer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Protocol</span></code></p>
+<dl class="method">
+<dt id="mach_opt.Designer.createDesign">
+<code class="descname">createDesign</code><span class="sig-paren">(</span><em>x: tuple</em><span class="sig-paren">)</span> &#x2192; mach_opt.Design<a class="headerlink" href="#mach_opt.Designer.createDesign" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mach_opt.Evaluator">
+<em class="property">class </em><code class="descclassname">mach_opt.</code><code class="descname">Evaluator</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mach_opt.Evaluator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Protocol</span></code></p>
+<dl class="method">
+<dt id="mach_opt.Evaluator.evaluate">
+<code class="descname">evaluate</code><span class="sig-paren">(</span><em>design: mach_opt.Design</em><span class="sig-paren">)</span> &#x2192; Any<a class="headerlink" href="#mach_opt.Evaluator.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mach_opt.MachineDesignProblem">
+<em class="property">class </em><code class="descclassname">mach_opt.</code><code class="descname">MachineDesignProblem</code><span class="sig-paren">(</span><em>designer: mach_opt.Designer</em>, <em>evaluator: mach_opt.Evaluator</em>, <em>objectives: mach_opt.Objective</em>, <em>dh: mach_opt.DataHandler</em>, <em>bounds: tuple</em>, <em>n_obj: int</em><span class="sig-paren">)</span><a class="headerlink" href="#mach_opt.MachineDesignProblem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="mach_opt.MachineDesignProblem.fitness">
+<code class="descname">fitness</code><span class="sig-paren">(</span><em>x: tuple</em><span class="sig-paren">)</span> &#x2192; tuple<a class="headerlink" href="#mach_opt.MachineDesignProblem.fitness" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="mach_opt.MachineDesignProblem.get_bounds">
+<code class="descname">get_bounds</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mach_opt.MachineDesignProblem.get_bounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns bounds for optimization problem</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="mach_opt.MachineDesignProblem.get_nobj">
+<code class="descname">get_nobj</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mach_opt.MachineDesignProblem.get_nobj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns number of objectievs of optimization problem</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mach_opt.MachineOptimizationMOEAD">
+<em class="property">class </em><code class="descclassname">mach_opt.</code><code class="descname">MachineOptimizationMOEAD</code><span class="sig-paren">(</span><em>machine_design_problem</em><span class="sig-paren">)</span><a class="headerlink" href="#mach_opt.MachineOptimizationMOEAD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="mach_opt.MachineOptimizationMOEAD.run_optimization">
+<code class="descname">run_optimization</code><span class="sig-paren">(</span><em>pop_size</em>, <em>gen_size</em><span class="sig-paren">)</span><a class="headerlink" href="#mach_opt.MachineOptimizationMOEAD.run_optimization" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="mach_opt.Objective">
+<em class="property">class </em><code class="descclassname">mach_opt.</code><code class="descname">Objective</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#mach_opt.Objective" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Protocol</span></code></p>
+<dl class="method">
+<dt id="mach_opt.Objective.getObjectives">
+<code class="descname">getObjectives</code><span class="sig-paren">(</span><em>fullResults</em><span class="sig-paren">)</span> &#x2192; tuple<a class="headerlink" href="#mach_opt.Objective.getObjectives" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="mach_eval.html" class="btn btn-neutral float-left" title="mach_eval module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Severson Group.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

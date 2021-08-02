@@ -1,0 +1,846 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>architects.machines package &mdash; MachEval 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="desopt module" href="desopt.html" />
+    <link rel="prev" title="architects package" href="architects.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> MachEval
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Guidelines:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html"><em>MachEval</em> Contribution Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_docs.html">Documentation Generation and Hosting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Code:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html"><em>MachEval</em></a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="architects.html">architects package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="architects.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">architects.machines package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="architects.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="architects.html#module-architects.architect">architects.architect module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="architects.html#module-architects.bspm_architect">architects.bspm_architect module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="architects.html#module-architects.winding_layout">architects.winding_layout module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="architects.html#module-architects">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="desopt.html">desopt module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mach_eval.html">mach_eval module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mach_opt.html">mach_opt module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MachEval</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html"><em>MachEval</em></a> &raquo;</li>
+        
+          <li><a href="architects.html">architects package</a> &raquo;</li>
+        
+      <li>architects.machines package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/architects.machines.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="architects-machines-package">
+<h1>architects.machines package<a class="headerlink" href="#architects-machines-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-architects.machines.bspm_machine">
+<span id="architects-machines-bspm-machine-module"></span><h2>architects.machines.bspm_machine module<a class="headerlink" href="#module-architects.machines.bspm_machine" title="Permalink to this headline">¶</a></h2>
+<p>Created on Tue Feb 23 00:41:26 2021</p>
+<p>&#64;author: Bharat</p>
+<dl class="class">
+<dt id="architects.machines.bspm_machine.BSPM_Machine">
+<em class="property">class </em><code class="descclassname">architects.machines.bspm_machine.</code><code class="descname">BSPM_Machine</code><span class="sig-paren">(</span><em>machine_parameter_dict: dict</em>, <em>materials_dict: dict</em>, <em>nameplate_dict: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.bspm_machine.BSPM_Machine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#architects.machines.machine.Machine" title="architects.machines.machine.Machine"><code class="xref py py-class docutils literal notranslate"><span class="pre">architects.machines.machine.Machine</span></code></a>, <a class="reference internal" href="#architects.machines.radial_machines.PM_Rotor_Sleeved" title="architects.machines.radial_machines.PM_Rotor_Sleeved"><code class="xref py py-class docutils literal notranslate"><span class="pre">architects.machines.radial_machines.PM_Rotor_Sleeved</span></code></a>, <a class="reference internal" href="#architects.machines.radial_machines.Stator" title="architects.machines.radial_machines.Stator"><code class="xref py py-class docutils literal notranslate"><span class="pre">architects.machines.radial_machines.Stator</span></code></a>, <a class="reference internal" href="#architects.machines.radial_machines.DPNVWinding" title="architects.machines.radial_machines.DPNVWinding"><code class="xref py py-class docutils literal notranslate"><span class="pre">architects.machines.radial_machines.DPNVWinding</span></code></a></p>
+<dl class="attribute">
+<dt id="architects.machines.bspm_machine.BSPM_Machine.Iq_rated_ratio">
+<code class="descname">Iq_rated_ratio</code><a class="headerlink" href="#architects.machines.bspm_machine.BSPM_Machine.Iq_rated_ratio" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.bspm_machine.BSPM_Machine.Rated_current">
+<code class="descname">Rated_current</code><a class="headerlink" href="#architects.machines.bspm_machine.BSPM_Machine.Rated_current" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.bspm_machine.BSPM_Machine.check_required_values">
+<code class="descname">check_required_values</code><span class="sig-paren">(</span><em>machine_geometry_dict: dict</em>, <em>materials_dict: dict</em>, <em>nameplate_dict: dict</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#architects.machines.bspm_machine.BSPM_Machine.check_required_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks to see if input dictionary have required values</p>
+<dl class="docutils">
+<dt>Keyword Argumets:</dt>
+<dd>machine_geometry_dict: dict
+materials_dict: dict
+winding_dict: dict
+nameplate_dict: dict</dd>
+<dt>Return Values</dt>
+<dd>bool</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.bspm_machine.BSPM_Machine.delta">
+<code class="descname">delta</code><a class="headerlink" href="#architects.machines.bspm_machine.BSPM_Machine.delta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.bspm_machine.BSPM_Machine.delta_e">
+<code class="descname">delta_e</code><a class="headerlink" href="#architects.machines.bspm_machine.BSPM_Machine.delta_e" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.bspm_machine.BSPM_Machine.get_missing_required_values">
+<code class="descname">get_missing_required_values</code><span class="sig-paren">(</span><em>machine_geometry_dict: dict</em>, <em>materials_dict: dict</em>, <em>nameplate_dict: dict</em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#architects.machines.bspm_machine.BSPM_Machine.get_missing_required_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns missing requried values from input dictionary</p>
+<dl class="docutils">
+<dt>Keyword Argumets:</dt>
+<dd>cls: Class
+machine_geometry_dict: dict
+materials_dict: dict
+winding_dict: dict
+nameplate_dict: dict</dd>
+<dt>Return Values</dt>
+<dd>missing_values: list</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.bspm_machine.BSPM_Machine.l_st">
+<code class="descname">l_st</code><a class="headerlink" href="#architects.machines.bspm_machine.BSPM_Machine.l_st" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.bspm_machine.BSPM_Machine.mech_omega">
+<code class="descname">mech_omega</code><a class="headerlink" href="#architects.machines.bspm_machine.BSPM_Machine.mech_omega" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.bspm_machine.BSPM_Machine.mech_power">
+<code class="descname">mech_power</code><a class="headerlink" href="#architects.machines.bspm_machine.BSPM_Machine.mech_power" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.bspm_machine.BSPM_Machine.ps">
+<code class="descname">ps</code><a class="headerlink" href="#architects.machines.bspm_machine.BSPM_Machine.ps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.bspm_machine.BSPM_Machine.required_materials">
+<code class="descname">required_materials</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.bspm_machine.BSPM_Machine.required_materials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.bspm_machine.BSPM_Machine.required_nameplate">
+<code class="descname">required_nameplate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.bspm_machine.BSPM_Machine.required_nameplate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.bspm_machine.BSPM_Machine.required_parameters">
+<code class="descname">required_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.bspm_machine.BSPM_Machine.required_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.bspm_machine.BSPM_Machine.voltage_rating">
+<code class="descname">voltage_rating</code><a class="headerlink" href="#architects.machines.bspm_machine.BSPM_Machine.voltage_rating" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-architects.machines.machine">
+<span id="architects-machines-machine-module"></span><h2>architects.machines.machine module<a class="headerlink" href="#module-architects.machines.machine" title="Permalink to this headline">¶</a></h2>
+<p>Created on Mon Feb  1 11:43:32 2021</p>
+<p>&#64;author: Martin Johnson</p>
+<dl class="exception">
+<dt id="architects.machines.machine.Error">
+<em class="property">exception </em><code class="descclassname">architects.machines.machine.</code><code class="descname">Error</code><a class="headerlink" href="#architects.machines.machine.Error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Base class for exceptions in this module.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="architects.machines.machine.Machine">
+<em class="property">class </em><code class="descclassname">architects.machines.machine.</code><code class="descname">Machine</code><a class="headerlink" href="#architects.machines.machine.Machine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>ABC for Machine objects</p>
+<dl class="method">
+<dt id="architects.machines.machine.Machine.check_required_values">
+<code class="descname">check_required_values</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.machine.Machine.check_required_values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.machine.Machine.get_missing_required_values">
+<code class="descname">get_missing_required_values</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.machine.Machine.get_missing_required_values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.machine.Machine.required_nameplate">
+<code class="descname">required_nameplate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.machine.Machine.required_nameplate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="architects.machines.machine.MachineComponent">
+<em class="property">class </em><code class="descclassname">architects.machines.machine.</code><code class="descname">MachineComponent</code><a class="headerlink" href="#architects.machines.machine.MachineComponent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Base Class for Machine Components</p>
+<dl class="method">
+<dt id="architects.machines.machine.MachineComponent.required_materials">
+<code class="descname">required_materials</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.machine.MachineComponent.required_materials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.machine.MachineComponent.required_parameters">
+<code class="descname">required_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.machine.MachineComponent.required_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="architects.machines.machine.MissingValueError">
+<em class="property">exception </em><code class="descclassname">architects.machines.machine.</code><code class="descname">MissingValueError</code><span class="sig-paren">(</span><em>expression</em>, <em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.machine.MissingValueError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#architects.machines.machine.Error" title="architects.machines.machine.Error"><code class="xref py py-class docutils literal notranslate"><span class="pre">architects.machines.machine.Error</span></code></a></p>
+<p>Exception raised for errors in the input.</p>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd>expression – input expression in which the error occurred
+message – explanation of the error</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="architects.machines.machine.Winding">
+<em class="property">class </em><code class="descclassname">architects.machines.machine.</code><code class="descname">Winding</code><a class="headerlink" href="#architects.machines.machine.Winding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#architects.machines.machine.MachineComponent" title="architects.machines.machine.MachineComponent"><code class="xref py py-class docutils literal notranslate"><span class="pre">architects.machines.machine.MachineComponent</span></code></a></p>
+<p>Base Class for Machine Components</p>
+<dl class="attribute">
+<dt id="architects.machines.machine.Winding.Kcu">
+<code class="descname">Kcu</code><a class="headerlink" href="#architects.machines.machine.Winding.Kcu" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.machine.Winding.Kov">
+<code class="descname">Kov</code><a class="headerlink" href="#architects.machines.machine.Winding.Kov" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.machine.Winding.Z_q">
+<code class="descname">Z_q</code><a class="headerlink" href="#architects.machines.machine.Winding.Z_q" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.machine.Winding.coil_mat">
+<code class="descname">coil_mat</code><a class="headerlink" href="#architects.machines.machine.Winding.coil_mat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.machine.Winding.layer_phases">
+<code class="descname">layer_phases</code><a class="headerlink" href="#architects.machines.machine.Winding.layer_phases" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.machine.Winding.layer_polarity">
+<code class="descname">layer_polarity</code><a class="headerlink" href="#architects.machines.machine.Winding.layer_polarity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.machine.Winding.no_of_layers">
+<code class="descname">no_of_layers</code><a class="headerlink" href="#architects.machines.machine.Winding.no_of_layers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.machine.Winding.pitch">
+<code class="descname">pitch</code><a class="headerlink" href="#architects.machines.machine.Winding.pitch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.machine.Winding.required_materials">
+<code class="descname">required_materials</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.machine.Winding.required_materials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.machine.Winding.required_parameters">
+<code class="descname">required_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.machine.Winding.required_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-architects.machines.radial_machines">
+<span id="architects-machines-radial-machines-module"></span><h2>architects.machines.radial_machines module<a class="headerlink" href="#module-architects.machines.radial_machines" title="Permalink to this headline">¶</a></h2>
+<p>Created on Mon Feb 15 09:36:01 2021</p>
+<p>&#64;author: Martin Johnson</p>
+<dl class="class">
+<dt id="architects.machines.radial_machines.DPNVWinding">
+<em class="property">class </em><code class="descclassname">architects.machines.radial_machines.</code><code class="descname">DPNVWinding</code><a class="headerlink" href="#architects.machines.radial_machines.DPNVWinding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#architects.machines.machine.Winding" title="architects.machines.machine.Winding"><code class="xref py py-class docutils literal notranslate"><span class="pre">architects.machines.machine.Winding</span></code></a>, <a class="reference internal" href="#architects.machines.machine.MachineComponent" title="architects.machines.machine.MachineComponent"><code class="xref py py-class docutils literal notranslate"><span class="pre">architects.machines.machine.MachineComponent</span></code></a></p>
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.DPNVWinding.coil_groups">
+<code class="descname">coil_groups</code><a class="headerlink" href="#architects.machines.radial_machines.DPNVWinding.coil_groups" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.radial_machines.DPNVWinding.required_materials">
+<code class="descname">required_materials</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.radial_machines.DPNVWinding.required_materials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.radial_machines.DPNVWinding.required_parameters">
+<code class="descname">required_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.radial_machines.DPNVWinding.required_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="architects.machines.radial_machines.PM">
+<em class="property">class </em><code class="descclassname">architects.machines.radial_machines.</code><code class="descname">PM</code><a class="headerlink" href="#architects.machines.radial_machines.PM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#architects.machines.machine.MachineComponent" title="architects.machines.machine.MachineComponent"><code class="xref py py-class docutils literal notranslate"><span class="pre">architects.machines.machine.MachineComponent</span></code></a></p>
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.PM.alpha_m">
+<code class="descname">alpha_m</code><a class="headerlink" href="#architects.machines.radial_machines.PM.alpha_m" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.PM.alpha_ms">
+<code class="descname">alpha_ms</code><a class="headerlink" href="#architects.machines.radial_machines.PM.alpha_ms" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.PM.d_m">
+<code class="descname">d_m</code><a class="headerlink" href="#architects.machines.radial_machines.PM.d_m" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.PM.magnet_mat">
+<code class="descname">magnet_mat</code><a class="headerlink" href="#architects.machines.radial_machines.PM.magnet_mat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.PM.n_m">
+<code class="descname">n_m</code><a class="headerlink" href="#architects.machines.radial_machines.PM.n_m" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.radial_machines.PM.required_materials">
+<code class="descname">required_materials</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.radial_machines.PM.required_materials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.radial_machines.PM.required_parameters">
+<code class="descname">required_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.radial_machines.PM.required_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="architects.machines.radial_machines.PM_Rotor">
+<em class="property">class </em><code class="descclassname">architects.machines.radial_machines.</code><code class="descname">PM_Rotor</code><a class="headerlink" href="#architects.machines.radial_machines.PM_Rotor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#architects.machines.radial_machines.Shaft" title="architects.machines.radial_machines.Shaft"><code class="xref py py-class docutils literal notranslate"><span class="pre">architects.machines.radial_machines.Shaft</span></code></a>, <a class="reference internal" href="#architects.machines.radial_machines.Rotor_Iron" title="architects.machines.radial_machines.Rotor_Iron"><code class="xref py py-class docutils literal notranslate"><span class="pre">architects.machines.radial_machines.Rotor_Iron</span></code></a>, <a class="reference internal" href="#architects.machines.radial_machines.PM" title="architects.machines.radial_machines.PM"><code class="xref py py-class docutils literal notranslate"><span class="pre">architects.machines.radial_machines.PM</span></code></a>, <a class="reference internal" href="#architects.machines.machine.MachineComponent" title="architects.machines.machine.MachineComponent"><code class="xref py py-class docutils literal notranslate"><span class="pre">architects.machines.machine.MachineComponent</span></code></a></p>
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.PM_Rotor.V_r">
+<code class="descname">V_r</code><a class="headerlink" href="#architects.machines.radial_machines.PM_Rotor.V_r" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.PM_Rotor.d_mp">
+<code class="descname">d_mp</code><a class="headerlink" href="#architects.machines.radial_machines.PM_Rotor.d_mp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.PM_Rotor.d_ms">
+<code class="descname">d_ms</code><a class="headerlink" href="#architects.machines.radial_machines.PM_Rotor.d_ms" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.PM_Rotor.p">
+<code class="descname">p</code><a class="headerlink" href="#architects.machines.radial_machines.PM_Rotor.p" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.PM_Rotor.r_ro">
+<code class="descname">r_ro</code><a class="headerlink" href="#architects.machines.radial_machines.PM_Rotor.r_ro" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.radial_machines.PM_Rotor.required_materials">
+<code class="descname">required_materials</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.radial_machines.PM_Rotor.required_materials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.radial_machines.PM_Rotor.required_parameters">
+<code class="descname">required_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.radial_machines.PM_Rotor.required_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="architects.machines.radial_machines.PM_Rotor_Sleeved">
+<em class="property">class </em><code class="descclassname">architects.machines.radial_machines.</code><code class="descname">PM_Rotor_Sleeved</code><a class="headerlink" href="#architects.machines.radial_machines.PM_Rotor_Sleeved" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#architects.machines.radial_machines.PM_Rotor" title="architects.machines.radial_machines.PM_Rotor"><code class="xref py py-class docutils literal notranslate"><span class="pre">architects.machines.radial_machines.PM_Rotor</span></code></a>, <a class="reference internal" href="#architects.machines.radial_machines.RotorSleeve" title="architects.machines.radial_machines.RotorSleeve"><code class="xref py py-class docutils literal notranslate"><span class="pre">architects.machines.radial_machines.RotorSleeve</span></code></a>, <a class="reference internal" href="#architects.machines.machine.MachineComponent" title="architects.machines.machine.MachineComponent"><code class="xref py py-class docutils literal notranslate"><span class="pre">architects.machines.machine.MachineComponent</span></code></a></p>
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.PM_Rotor_Sleeved.delta_sl">
+<code class="descname">delta_sl</code><a class="headerlink" href="#architects.machines.radial_machines.PM_Rotor_Sleeved.delta_sl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.radial_machines.PM_Rotor_Sleeved.required_materials">
+<code class="descname">required_materials</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.radial_machines.PM_Rotor_Sleeved.required_materials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.radial_machines.PM_Rotor_Sleeved.required_parameters">
+<code class="descname">required_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.radial_machines.PM_Rotor_Sleeved.required_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="architects.machines.radial_machines.RotorSleeve">
+<em class="property">class </em><code class="descclassname">architects.machines.radial_machines.</code><code class="descname">RotorSleeve</code><a class="headerlink" href="#architects.machines.radial_machines.RotorSleeve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#architects.machines.machine.MachineComponent" title="architects.machines.machine.MachineComponent"><code class="xref py py-class docutils literal notranslate"><span class="pre">architects.machines.machine.MachineComponent</span></code></a></p>
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.RotorSleeve.d_sl">
+<code class="descname">d_sl</code><a class="headerlink" href="#architects.machines.radial_machines.RotorSleeve.d_sl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.radial_machines.RotorSleeve.required_materials">
+<code class="descname">required_materials</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.radial_machines.RotorSleeve.required_materials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.radial_machines.RotorSleeve.required_parameters">
+<code class="descname">required_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.radial_machines.RotorSleeve.required_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.RotorSleeve.rotor_sleeve_mat">
+<code class="descname">rotor_sleeve_mat</code><a class="headerlink" href="#architects.machines.radial_machines.RotorSleeve.rotor_sleeve_mat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="architects.machines.radial_machines.Rotor_Iron">
+<em class="property">class </em><code class="descclassname">architects.machines.radial_machines.</code><code class="descname">Rotor_Iron</code><a class="headerlink" href="#architects.machines.radial_machines.Rotor_Iron" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#architects.machines.machine.MachineComponent" title="architects.machines.machine.MachineComponent"><code class="xref py py-class docutils literal notranslate"><span class="pre">architects.machines.machine.MachineComponent</span></code></a></p>
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.Rotor_Iron.d_ri">
+<code class="descname">d_ri</code><a class="headerlink" href="#architects.machines.radial_machines.Rotor_Iron.d_ri" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.radial_machines.Rotor_Iron.required_materials">
+<code class="descname">required_materials</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.radial_machines.Rotor_Iron.required_materials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.radial_machines.Rotor_Iron.required_parameters">
+<code class="descname">required_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.radial_machines.Rotor_Iron.required_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.Rotor_Iron.rotor_iron_mat">
+<code class="descname">rotor_iron_mat</code><a class="headerlink" href="#architects.machines.radial_machines.Rotor_Iron.rotor_iron_mat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="architects.machines.radial_machines.Shaft">
+<em class="property">class </em><code class="descclassname">architects.machines.radial_machines.</code><code class="descname">Shaft</code><a class="headerlink" href="#architects.machines.radial_machines.Shaft" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#architects.machines.machine.MachineComponent" title="architects.machines.machine.MachineComponent"><code class="xref py py-class docutils literal notranslate"><span class="pre">architects.machines.machine.MachineComponent</span></code></a></p>
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.Shaft.r_sh">
+<code class="descname">r_sh</code><a class="headerlink" href="#architects.machines.radial_machines.Shaft.r_sh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.radial_machines.Shaft.required_materials">
+<code class="descname">required_materials</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.radial_machines.Shaft.required_materials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.radial_machines.Shaft.required_parameters">
+<code class="descname">required_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.radial_machines.Shaft.required_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.Shaft.shaft_mat">
+<code class="descname">shaft_mat</code><a class="headerlink" href="#architects.machines.radial_machines.Shaft.shaft_mat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="architects.machines.radial_machines.Stator">
+<em class="property">class </em><code class="descclassname">architects.machines.radial_machines.</code><code class="descname">Stator</code><a class="headerlink" href="#architects.machines.radial_machines.Stator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#architects.machines.machine.MachineComponent" title="architects.machines.machine.MachineComponent"><code class="xref py py-class docutils literal notranslate"><span class="pre">architects.machines.machine.MachineComponent</span></code></a></p>
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.Stator.Q">
+<code class="descname">Q</code><a class="headerlink" href="#architects.machines.radial_machines.Stator.Q" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.Stator.alpha_so">
+<code class="descname">alpha_so</code><a class="headerlink" href="#architects.machines.radial_machines.Stator.alpha_so" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.Stator.alpha_st">
+<code class="descname">alpha_st</code><a class="headerlink" href="#architects.machines.radial_machines.Stator.alpha_st" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.Stator.d_so">
+<code class="descname">d_so</code><a class="headerlink" href="#architects.machines.radial_machines.Stator.d_so" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.Stator.d_sp">
+<code class="descname">d_sp</code><a class="headerlink" href="#architects.machines.radial_machines.Stator.d_sp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.Stator.d_st">
+<code class="descname">d_st</code><a class="headerlink" href="#architects.machines.radial_machines.Stator.d_st" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.Stator.d_sy">
+<code class="descname">d_sy</code><a class="headerlink" href="#architects.machines.radial_machines.Stator.d_sy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.Stator.r_si">
+<code class="descname">r_si</code><a class="headerlink" href="#architects.machines.radial_machines.Stator.r_si" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.Stator.r_so">
+<code class="descname">r_so</code><a class="headerlink" href="#architects.machines.radial_machines.Stator.r_so" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.radial_machines.Stator.required_materials">
+<code class="descname">required_materials</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.radial_machines.Stator.required_materials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.radial_machines.Stator.required_parameters">
+<code class="descname">required_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.radial_machines.Stator.required_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.Stator.s_slot">
+<code class="descname">s_slot</code><a class="headerlink" href="#architects.machines.radial_machines.Stator.s_slot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.Stator.stator_iron_mat">
+<code class="descname">stator_iron_mat</code><a class="headerlink" href="#architects.machines.radial_machines.Stator.stator_iron_mat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.radial_machines.Stator.w_st">
+<code class="descname">w_st</code><a class="headerlink" href="#architects.machines.radial_machines.Stator.w_st" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-architects.machines">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-architects.machines" title="Permalink to this headline">¶</a></h2>
+<p>Created on Sat Feb 13 13:32:02 2021</p>
+<p>&#64;author: Bharat</p>
+<dl class="class">
+<dt id="architects.machines.BSPM_Machine">
+<em class="property">class </em><code class="descclassname">architects.machines.</code><code class="descname">BSPM_Machine</code><span class="sig-paren">(</span><em>machine_parameter_dict: dict</em>, <em>materials_dict: dict</em>, <em>nameplate_dict: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.BSPM_Machine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#architects.machines.machine.Machine" title="architects.machines.machine.Machine"><code class="xref py py-class docutils literal notranslate"><span class="pre">architects.machines.machine.Machine</span></code></a>, <a class="reference internal" href="#architects.machines.radial_machines.PM_Rotor_Sleeved" title="architects.machines.radial_machines.PM_Rotor_Sleeved"><code class="xref py py-class docutils literal notranslate"><span class="pre">architects.machines.radial_machines.PM_Rotor_Sleeved</span></code></a>, <a class="reference internal" href="#architects.machines.radial_machines.Stator" title="architects.machines.radial_machines.Stator"><code class="xref py py-class docutils literal notranslate"><span class="pre">architects.machines.radial_machines.Stator</span></code></a>, <a class="reference internal" href="#architects.machines.radial_machines.DPNVWinding" title="architects.machines.radial_machines.DPNVWinding"><code class="xref py py-class docutils literal notranslate"><span class="pre">architects.machines.radial_machines.DPNVWinding</span></code></a></p>
+<dl class="attribute">
+<dt id="architects.machines.BSPM_Machine.Iq_rated_ratio">
+<code class="descname">Iq_rated_ratio</code><a class="headerlink" href="#architects.machines.BSPM_Machine.Iq_rated_ratio" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.BSPM_Machine.Rated_current">
+<code class="descname">Rated_current</code><a class="headerlink" href="#architects.machines.BSPM_Machine.Rated_current" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.BSPM_Machine.check_required_values">
+<code class="descname">check_required_values</code><span class="sig-paren">(</span><em>machine_geometry_dict: dict</em>, <em>materials_dict: dict</em>, <em>nameplate_dict: dict</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#architects.machines.BSPM_Machine.check_required_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks to see if input dictionary have required values</p>
+<dl class="docutils">
+<dt>Keyword Argumets:</dt>
+<dd>machine_geometry_dict: dict
+materials_dict: dict
+winding_dict: dict
+nameplate_dict: dict</dd>
+<dt>Return Values</dt>
+<dd>bool</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.BSPM_Machine.delta">
+<code class="descname">delta</code><a class="headerlink" href="#architects.machines.BSPM_Machine.delta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.BSPM_Machine.delta_e">
+<code class="descname">delta_e</code><a class="headerlink" href="#architects.machines.BSPM_Machine.delta_e" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.BSPM_Machine.get_missing_required_values">
+<code class="descname">get_missing_required_values</code><span class="sig-paren">(</span><em>machine_geometry_dict: dict</em>, <em>materials_dict: dict</em>, <em>nameplate_dict: dict</em><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#architects.machines.BSPM_Machine.get_missing_required_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns missing requried values from input dictionary</p>
+<dl class="docutils">
+<dt>Keyword Argumets:</dt>
+<dd>cls: Class
+machine_geometry_dict: dict
+materials_dict: dict
+winding_dict: dict
+nameplate_dict: dict</dd>
+<dt>Return Values</dt>
+<dd>missing_values: list</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.BSPM_Machine.l_st">
+<code class="descname">l_st</code><a class="headerlink" href="#architects.machines.BSPM_Machine.l_st" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.BSPM_Machine.mech_omega">
+<code class="descname">mech_omega</code><a class="headerlink" href="#architects.machines.BSPM_Machine.mech_omega" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.BSPM_Machine.mech_power">
+<code class="descname">mech_power</code><a class="headerlink" href="#architects.machines.BSPM_Machine.mech_power" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.BSPM_Machine.ps">
+<code class="descname">ps</code><a class="headerlink" href="#architects.machines.BSPM_Machine.ps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.BSPM_Machine.required_materials">
+<code class="descname">required_materials</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.BSPM_Machine.required_materials" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.BSPM_Machine.required_nameplate">
+<code class="descname">required_nameplate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.BSPM_Machine.required_nameplate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="architects.machines.BSPM_Machine.required_parameters">
+<code class="descname">required_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#architects.machines.BSPM_Machine.required_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="architects.machines.BSPM_Machine.voltage_rating">
+<code class="descname">voltage_rating</code><a class="headerlink" href="#architects.machines.BSPM_Machine.voltage_rating" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="desopt.html" class="btn btn-neutral float-right" title="desopt module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="architects.html" class="btn btn-neutral float-left" title="architects package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Severson Group.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
