@@ -1,0 +1,359 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>des_opt module &mdash; MachEval 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="mach_eval module" href="mach_eval.html" />
+    <link rel="prev" title="architects.machines package" href="architects.machines.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> MachEval
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Guidelines:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html"><em>MachEval</em> Contribution Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_docs.html">Documentation Generation and Hosting</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Code:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">MachEval</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="architects.html">architects package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">des_opt module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mach_eval.html">mach_eval module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MachEval</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">MachEval</a> &raquo;</li>
+        
+      <li>des_opt module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/des_opt.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-des_opt">
+<span id="des-opt-module"></span><h1>des_opt module<a class="headerlink" href="#module-des_opt" title="Permalink to this headline">¶</a></h1>
+<p>Module holding classes required for design optimization.</p>
+<p>This module holds the classes required for optimizing a design using pygmo in MachEval.</p>
+<dl class="class">
+<dt id="des_opt.DataHandler">
+<em class="property">class </em><code class="descclassname">des_opt.</code><code class="descname">DataHandler</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#des_opt.DataHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Protocol</span></code></p>
+<p>Parent class for all data handlers</p>
+<dl class="method">
+<dt id="des_opt.DataHandler.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>design: des_opt.Design</em>, <em>full_results</em>, <em>objs</em><span class="sig-paren">)</span><a class="headerlink" href="#des_opt.DataHandler.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="des_opt.Design">
+<em class="property">class </em><code class="descclassname">des_opt.</code><code class="descname">Design</code><a class="headerlink" href="#des_opt.Design" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Parent class for all designs</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="des_opt.DesignOptimizationMOEAD">
+<em class="property">class </em><code class="descclassname">des_opt.</code><code class="descname">DesignOptimizationMOEAD</code><span class="sig-paren">(</span><em>design_problem</em><span class="sig-paren">)</span><a class="headerlink" href="#des_opt.DesignOptimizationMOEAD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="des_opt.DesignOptimizationMOEAD.initial_pop">
+<code class="descname">initial_pop</code><span class="sig-paren">(</span><em>pop_size</em><span class="sig-paren">)</span><a class="headerlink" href="#des_opt.DesignOptimizationMOEAD.initial_pop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="des_opt.DesignOptimizationMOEAD.run_optimization">
+<code class="descname">run_optimization</code><span class="sig-paren">(</span><em>pop</em>, <em>gen_size</em><span class="sig-paren">)</span><a class="headerlink" href="#des_opt.DesignOptimizationMOEAD.run_optimization" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="des_opt.DesignProblem">
+<em class="property">class </em><code class="descclassname">des_opt.</code><code class="descname">DesignProblem</code><span class="sig-paren">(</span><em>designer: des_opt.Designer</em>, <em>evaluator: des_opt.Evaluator</em>, <em>design_space: des_opt.DesignSpace</em>, <em>dh: des_opt.DataHandler</em><span class="sig-paren">)</span><a class="headerlink" href="#des_opt.DesignProblem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to create, evaluate, and optimize designs</p>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd>designer: Objects which convert free variables to a design.
+evaluator: Objects which evaluate the performance of different designs.
+design_space: Objects which characterizes the design space of the optimization.
+dh: Data handlers which enable saving optimization results and its resumption.</dd>
+</dl>
+<dl class="method">
+<dt id="des_opt.DesignProblem.fitness">
+<code class="descname">fitness</code><span class="sig-paren">(</span><em>x: tuple</em><span class="sig-paren">)</span> &#x2192; tuple<a class="headerlink" href="#des_opt.DesignProblem.fitness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the fitness or objectives of each design based on evaluation results.</p>
+<p>This function creates, evaluates, and calculates the fitness of each design generated by the optimization
+algorithm. It also saves the results and handles invalid designs.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>x: The list of free variables required to create a complete design</dd>
+<dt>Returns:</dt>
+<dd>objs: Returns the fitness of each design</dd>
+<dt>Raises:</dt>
+<dd>e: The errors encountered during design creation or evaluation apart from the InvalidDesign error</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="des_opt.DesignProblem.get_bounds">
+<code class="descname">get_bounds</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#des_opt.DesignProblem.get_bounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns bounds for optimization problem</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="des_opt.DesignProblem.get_nobj">
+<code class="descname">get_nobj</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#des_opt.DesignProblem.get_nobj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns number of objectives of optimization problem</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="des_opt.DesignSpace">
+<em class="property">class </em><code class="descclassname">des_opt.</code><code class="descname">DesignSpace</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#des_opt.DesignSpace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Protocol</span></code></p>
+<p>Parent class for a optimization DesignSpace classes</p>
+<dl class="method">
+<dt id="des_opt.DesignSpace.check_constraints">
+<code class="descname">check_constraints</code><span class="sig-paren">(</span><em>full_results</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#des_opt.DesignSpace.check_constraints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="des_opt.DesignSpace.get_bounds">
+<code class="descname">get_bounds</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span> &#x2192; tuple<a class="headerlink" href="#des_opt.DesignSpace.get_bounds" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="des_opt.DesignSpace.get_objectives">
+<code class="descname">get_objectives</code><span class="sig-paren">(</span><em>valid_constraints</em>, <em>full_results</em><span class="sig-paren">)</span> &#x2192; tuple<a class="headerlink" href="#des_opt.DesignSpace.get_objectives" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="des_opt.DesignSpace.n_obj">
+<code class="descname">n_obj</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#des_opt.DesignSpace.n_obj" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="des_opt.Designer">
+<em class="property">class </em><code class="descclassname">des_opt.</code><code class="descname">Designer</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#des_opt.Designer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Protocol</span></code></p>
+<p>Parent class for all designers</p>
+<dl class="method">
+<dt id="des_opt.Designer.create_design">
+<code class="descname">create_design</code><span class="sig-paren">(</span><em>x: tuple</em><span class="sig-paren">)</span> &#x2192; des_opt.Design<a class="headerlink" href="#des_opt.Designer.create_design" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="des_opt.Evaluator">
+<em class="property">class </em><code class="descclassname">des_opt.</code><code class="descname">Evaluator</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#des_opt.Evaluator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Protocol</span></code></p>
+<p>Parent class for all design evaluators</p>
+<dl class="method">
+<dt id="des_opt.Evaluator.evaluate">
+<code class="descname">evaluate</code><span class="sig-paren">(</span><em>design: des_opt.Design</em><span class="sig-paren">)</span> &#x2192; Any<a class="headerlink" href="#des_opt.Evaluator.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="des_opt.InvalidDesign">
+<em class="property">exception </em><code class="descclassname">des_opt.</code><code class="descname">InvalidDesign</code><span class="sig-paren">(</span><em>message='Invalid Design'</em><span class="sig-paren">)</span><a class="headerlink" href="#des_opt.InvalidDesign" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Exception raised for invalid designs</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="mach_eval.html" class="btn btn-neutral float-right" title="mach_eval module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="architects.machines.html" class="btn btn-neutral float-left" title="architects.machines package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Severson Group.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
