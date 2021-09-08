@@ -89,11 +89,13 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#code-overview">Code Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#des-opt">des_opt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#mach-eval">mach_eval</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#machinedesigner">MachineDesigner</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#machineevaluator">MachineEvaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-overview">Code Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#des-opt">des_opt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mach-eval">mach_eval</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#machinedesigner">MachineDesigner</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#machineevaluator">MachineEvaluator</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -191,9 +193,8 @@
 </div>
 <p>The primary purpose of <code class="docutils literal notranslate"><span class="pre">macheval</span></code> is to act as a module framework in which machine design, evaluation, and optimization can occur. The <code class="docutils literal notranslate"><span class="pre">des_opt</span></code> module is built as an extension of the user-defined-problem objects of <code class="docutils literal notranslate"><span class="pre">pygmo</span></code> and the <code class="docutils literal notranslate"><span class="pre">mach_eval</span></code> module extends certain protocols defined in the <code class="docutils literal notranslate"><span class="pre">des_opt</span></code> module. Each higher level module is designed such that it can function without the use of the lower-level modules so long as function calls are satisfied.</p>
 <p>The rest of this document will cover both the <code class="docutils literal notranslate"><span class="pre">des_opt</span></code> and <code class="docutils literal notranslate"><span class="pre">mach_eval</span></code> modules, explaining their purpose and applications. A detailed description of the code can be found here TODO ADD THIS LINK.</p>
-</div>
 <div class="section" id="des-opt">
-<h2>des_opt<a class="headerlink" href="#des-opt" title="Permalink to this headline">¶</a></h2>
+<h3>des_opt<a class="headerlink" href="#des-opt" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="_images/desopt_Diagram.png"><img alt="Trial1" src="_images/desopt_Diagram.png" style="width: 400px;" /></a>
 </div>
@@ -213,13 +214,13 @@ Handles free variable bounds, constraints, and number of objectives.</dd>
 <p>Additional details of each of these objects can be found in the code documentation. An example optimization of a rectangle using the <code class="docutils literal notranslate"><span class="pre">des_opt</span></code> module can be found <a class="reference internal" href="rectangle_example.html"><span class="doc">here</span></a>.</p>
 </div>
 <div class="section" id="mach-eval">
-<h2>mach_eval<a class="headerlink" href="#mach-eval" title="Permalink to this headline">¶</a></h2>
+<h3>mach_eval<a class="headerlink" href="#mach-eval" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="_images/MachEval.png"><img alt="Trial1" src="_images/MachEval.png" style="width: 800px;" /></a>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">mach-eval</span></code> module is designed as an extension of the <code class="docutils literal notranslate"><span class="pre">Designer</span></code> and <code class="docutils literal notranslate"><span class="pre">Evaluator</span></code> protocols from the <code class="docutils literal notranslate"><span class="pre">des_opt</span></code> module through the use of the <code class="docutils literal notranslate"><span class="pre">MachineDesigner</span></code> and <code class="docutils literal notranslate"><span class="pre">MachineEvaluator</span></code> classes respectively. These classes are constructed specifically for the design and evaluation of electric machine, however they can be utilized in the optimization of any complex design problem. An example optimization utilizing the <code class="docutils literal notranslate"><span class="pre">mach_eval</span></code> module is provided <a class="reference internal" href="toy_example.html"><span class="doc">here</span></a>.</p>
 <div class="section" id="machinedesigner">
-<h3>MachineDesigner<a class="headerlink" href="#machinedesigner" title="Permalink to this headline">¶</a></h3>
+<h4>MachineDesigner<a class="headerlink" href="#machinedesigner" title="Permalink to this headline">¶</a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">MachineDesigner</span></code> class is a concrete implementation of the <code class="docutils literal notranslate"><span class="pre">Designer</span></code> protocol from the <code class="docutils literal notranslate"><span class="pre">des_opt</span></code> module. This class is responsible for converting free variables from and optimization into a <code class="docutils literal notranslate"><span class="pre">MachineDesign</span></code> object. The <code class="docutils literal notranslate"><span class="pre">MachineDesign</span></code> object has two attributes: a <code class="docutils literal notranslate"><span class="pre">machine</span></code>, and  <code class="docutils literal notranslate"><span class="pre">settings</span></code>.  The <code class="docutils literal notranslate"><span class="pre">machine</span></code> attribute is an object that holds all the relevant information about the machine, including geometric dimensions, material properties, nameplate values, and winding specifications. The <code class="docutils literal notranslate"><span class="pre">settings</span></code> object describes the operating conditions (temperatures, currents/drive settings, operating speed/torques) as well as any other required information to evaluate the design.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="_images/machineDesignerExample.png"><img alt="Trial1" src="_images/machineDesignerExample.png" style="width: 800px;" /></a>
@@ -227,7 +228,7 @@ Handles free variable bounds, constraints, and number of objectives.</dd>
 <p>The <code class="docutils literal notranslate"><span class="pre">MachineDesigner</span></code> requires two objects to be passed in on initialization: An <code class="docutils literal notranslate"><span class="pre">Architect</span></code> and a <code class="docutils literal notranslate"><span class="pre">SettingsHandler</span></code>. These object are defined as protocols and are responsible for the the creation of the <code class="docutils literal notranslate"><span class="pre">machine</span></code> and <code class="docutils literal notranslate"><span class="pre">settings</span></code> objects respectively.</p>
 </div>
 <div class="section" id="machineevaluator">
-<h3>MachineEvaluator<a class="headerlink" href="#machineevaluator" title="Permalink to this headline">¶</a></h3>
+<h4>MachineEvaluator<a class="headerlink" href="#machineevaluator" title="Permalink to this headline">¶</a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">MachineEvaluator</span></code> class implements the <code class="docutils literal notranslate"><span class="pre">Evaluator</span></code> protocol from the <code class="docutils literal notranslate"><span class="pre">des_opt</span></code> module. This class extracts evaluation results from the <code class="docutils literal notranslate"><span class="pre">MachineDesign</span></code> object created by the <code class="docutils literal notranslate"><span class="pre">MachineDesigner</span></code>. The evaluation process is split into distinct steps which are described by an <code class="docutils literal notranslate"><span class="pre">EvaluationStep</span></code> protocol. These steps take in an input <code class="docutils literal notranslate"><span class="pre">state</span></code>, which holds the <code class="docutils literal notranslate"><span class="pre">MachineDesign</span></code> and any results from the previous evaluations, preform some evaluation on the design, and then add the results to the <code class="docutils literal notranslate"><span class="pre">state</span></code> object.</p>
 <p>In order to facilitate the use of generalized machine analysis, a concrete implementation of the <code class="docutils literal notranslate"><span class="pre">EvaluationStep</span></code> protocol is provided in the form of the <code class="docutils literal notranslate"><span class="pre">AnalysisStep</span></code>. This class is designed to handle the conversion of a user defined input ‘’state’’ to the form required for a specific <code class="docutils literal notranslate"><span class="pre">Analyzer</span></code>. The <code class="docutils literal notranslate"><span class="pre">AnalysisStep</span></code> class takes in three protocols on initialization:</p>
 <dl class="docutils">
@@ -240,6 +241,7 @@ Handles free variable bounds, constraints, and number of objectives.</dd>
 </dl>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="_images/AnalysisStepExample.png"><img alt="Trial1" src="_images/AnalysisStepExample.png" style="width: 800px;" /></a>
+</div>
 </div>
 </div>
 </div>
