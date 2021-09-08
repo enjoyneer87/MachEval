@@ -39,7 +39,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="MachEval Contribution Guidelines" href="documentation.html" /> 
+    <link rel="next" title="Introduction" href="getting_started.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -84,14 +84,19 @@
               
             
             
-              <p class="caption"><span class="caption-text">Guidelines:</span></p>
+              <p class="caption"><span class="caption-text">Getting Started:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="documentation.html"><em>MachEval</em> Contribution Guidelines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="auto_docs.html">Documentation Generation and Hosting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rectangle_example.html">Rectangle Example</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Code:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">MachEval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html"><em>MachEval</em></a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guidelines:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html"><em>MachEval</em> Contribution Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_docs.html">Documentation Generation and Hosting</a></li>
 </ul>
 
             
@@ -161,7 +166,36 @@
             
   <div class="section" id="macheval">
 <h1>MachEval<a class="headerlink" href="#macheval" title="Permalink to this headline">¶</a></h1>
-<p>An electric machine evaluation and optimization framework.</p>
+<p>MachEval is a code base designed to assist in the evaluation and optimization of electric machines. There are two primary modules: <code class="docutils literal notranslate"><span class="pre">desopt</span></code> which extends <code class="docutils literal notranslate"><span class="pre">pygmo</span></code> to handle design optimization, and <code class="docutils literal notranslate"><span class="pre">macheval</span></code> for evaluation and analysis of electric machines. <code class="docutils literal notranslate"><span class="pre">macheval</span></code> is designed to interface directly with <code class="docutils literal notranslate"><span class="pre">emach</span></code>, a code base for modeling of electrical machines using FEA tooling.</p>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Getting Started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#code-overview">Code Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#des-opt">des_opt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#mach-eval">mach_eval</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rectangle_example.html">Rectangle Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rectangle_example.html#designer">Designer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rectangle_example.html#evaluator">Evaluator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rectangle_example.html#optimization">Optimization</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Code:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html"><em>MachEval</em></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architects.html">architects package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mach_eval.html">mach_eval module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mach_opt.html">mach_opt module</a></li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Guidelines:</span></p>
 <ul>
@@ -173,17 +207,6 @@
 <li class="toctree-l1"><a class="reference internal" href="auto_docs.html">Documentation Generation and Hosting</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="auto_docs.html#using-sphinx">Using Sphinx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="auto_docs.html#hosting-documentation-online">Hosting Documentation Online</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Code:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">MachEval</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="architects.html">architects package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="des_opt.html">des_opt module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mach_eval.html">mach_eval module</a></li>
 </ul>
 </li>
 </ul>
@@ -203,7 +226,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="documentation.html" class="btn btn-neutral float-right" title="MachEval Contribution Guidelines" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="getting_started.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

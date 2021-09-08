@@ -1,0 +1,296 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Introduction &mdash; MachEval 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Rectangle Example" href="rectangle_example.html" />
+    <link rel="prev" title="MachEval" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> MachEval
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-overview">Code Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#des-opt">des_opt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mach-eval">mach_eval</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#machinedesigner">MachineDesigner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machineevaluator">MachineEvaluator</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rectangle_example.html">Rectangle Example</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Code:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html"><em>MachEval</em></a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guidelines:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html"><em>MachEval</em> Contribution Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_docs.html">Documentation Generation and Hosting</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MachEval</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Introduction</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/getting_started.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>This document will outline the installation of <code class="docutils literal notranslate"><span class="pre">macheval</span></code>      and how to get started using it to design, evaluate, and optimize electric machines.</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>The current code base can be found <a class="reference external" href="https://github.com/Severson-Group/MachEval/tree/develop">here</a>. Download the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch into a folder in which you wish to run the design optimization.</p>
+</div>
+<div class="section" id="code-overview">
+<h2>Code Overview<a class="headerlink" href="#code-overview" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">macheval</span></code> code base is designed to be used by <code class="docutils literal notranslate"><span class="pre">pygmo</span></code> an open source optimization library in python. Full documentation for the <code class="docutils literal notranslate"><span class="pre">pygmo</span></code> library can be found <a class="reference external" href="https://esa.github.io/pygmo2/">here</a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">macheval</span></code> repository contains two sub-modules which interface with one another and <code class="docutils literal notranslate"><span class="pre">pygmo</span></code> as shown below. the <code class="docutils literal notranslate"><span class="pre">des_opt</span></code> module is defined to interface with <code class="docutils literal notranslate"><span class="pre">pygmo</span></code> by converting free variables to objective values in the required fitness function. the <code class="docutils literal notranslate"><span class="pre">mach_eval</span></code> module is used to evaluate a machine design produced by <code class="docutils literal notranslate"><span class="pre">des_opt</span></code>.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/CodeOverview.png"><img alt="Trial1" src="_images/CodeOverview.png" style="width: 600px;" /></a>
+</div>
+<p>The primary purpose of <code class="docutils literal notranslate"><span class="pre">macheval</span></code> is to act as a module framework in which machine design, evaluation, and optimization can occur. The <code class="docutils literal notranslate"><span class="pre">des_opt</span></code> module is built as an extension of the user-defined-problem objects of <code class="docutils literal notranslate"><span class="pre">pygmo</span></code> and the <code class="docutils literal notranslate"><span class="pre">mach_eval</span></code> module extends certain protocols defined in the <code class="docutils literal notranslate"><span class="pre">des_opt</span></code> module. Each higher level module is designed such that it can function without the use of the lower-level modules so long as function calls are satisfied.</p>
+<p>The rest of this document will cover both the <code class="docutils literal notranslate"><span class="pre">des_opt</span></code> and <code class="docutils literal notranslate"><span class="pre">mach_eval</span></code> modules, explaining their purpose and applications. A detailed description of the code can be found here TODO ADD THIS LINK.</p>
+</div>
+<div class="section" id="des-opt">
+<h2>des_opt<a class="headerlink" href="#des-opt" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/desopt_Diagram.png"><img alt="Trial1" src="_images/desopt_Diagram.png" style="width: 400px;" /></a>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">des_opt</span></code> module is designed to extend the user-defined-problem definition prescribed by <code class="docutils literal notranslate"><span class="pre">pygmo</span></code>. In order for <code class="docutils literal notranslate"><span class="pre">pygmo</span></code> to run a multi-objective user-defined-problem, the object must have three functions implemented: <code class="docutils literal notranslate"><span class="pre">fitness</span></code>, <code class="docutils literal notranslate"><span class="pre">get_bounds</span></code>, and <code class="docutils literal notranslate"><span class="pre">get_nobj</span></code>. The primary class of the <code class="docutils literal notranslate"><span class="pre">des_opt</span></code> module is the <code class="docutils literal notranslate"><span class="pre">DesignProblem</span></code> class which implements the required functions.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">DesignProblem</span></code> class is structured such that it takes in several objects on initialization which utilize pythons protocol class introduced in <a class="reference external" href="https://www.python.org/dev/peps/pep-0544/">PEP 544</a>. These objects and their purpose are summarized as follows:</p>
+<dl class="docutils">
+<dt>Designer</dt>
+<dd>Responsible for creating the design from the free variables <code class="docutils literal notranslate"><span class="pre">x</span></code>.</dd>
+<dt>Evaluator</dt>
+<dd>Evaluates the design from the designer.</dd>
+<dt>Objectives</dt>
+<dd>Converts the results of the design evaluation into an objectives tuple for return to <code class="docutils literal notranslate"><span class="pre">pygmo</span></code>.
+Handles free variable bounds, constraints, and number of objectives.</dd>
+<dt>DataHandler</dt>
+<dd>Saves the design, evaluation results, and objective values so that optimization can be paused and resumed.</dd>
+</dl>
+<p>Additional details of each of these objects can be found in the code documentation. An example optimization of a rectangle using the <code class="docutils literal notranslate"><span class="pre">des_opt</span></code> module can be found <a class="reference internal" href="rectangle_example.html"><span class="doc">here</span></a>.</p>
+</div>
+<div class="section" id="mach-eval">
+<h2>mach_eval<a class="headerlink" href="#mach-eval" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/MachEval.png"><img alt="Trial1" src="_images/MachEval.png" style="width: 800px;" /></a>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">mach-eval</span></code> module is designed as an extension of the <code class="docutils literal notranslate"><span class="pre">Designer</span></code> and <code class="docutils literal notranslate"><span class="pre">Evaluator</span></code> protocols from the <code class="docutils literal notranslate"><span class="pre">des_opt</span></code> module through the use of the <code class="docutils literal notranslate"><span class="pre">MachineDesigner</span></code> and <code class="docutils literal notranslate"><span class="pre">MachineEvaluator</span></code> classes respectively. These classes are constructed specifically for the design and evaluation of electric machine, however they can be utilized in the optimization of any complex design problem. An example optimization utilizing the <code class="docutils literal notranslate"><span class="pre">mach_eval</span></code> module is provided <a class="reference internal" href="toy_example.html"><span class="doc">here</span></a>.</p>
+<div class="section" id="machinedesigner">
+<h3>MachineDesigner<a class="headerlink" href="#machinedesigner" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">MachineDesigner</span></code> class is a concrete implementation of the <code class="docutils literal notranslate"><span class="pre">Designer</span></code> protocol from the <code class="docutils literal notranslate"><span class="pre">des_opt</span></code> module. This class is responsible for converting free variables from and optimization into a <code class="docutils literal notranslate"><span class="pre">MachineDesign</span></code> object. The <code class="docutils literal notranslate"><span class="pre">MachineDesign</span></code> object has two attributes: a <code class="docutils literal notranslate"><span class="pre">machine</span></code>, and  <code class="docutils literal notranslate"><span class="pre">settings</span></code>.  The <code class="docutils literal notranslate"><span class="pre">machine</span></code> attribute is an object that holds all the relevant information about the machine, including geometric dimensions, material properties, nameplate values, and winding specifications. The <code class="docutils literal notranslate"><span class="pre">settings</span></code> object describes the operating conditions (temperatures, currents/drive settings, operating speed/torques) as well as any other required information to evaluate the design.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/machineDesignerExample.png"><img alt="Trial1" src="_images/machineDesignerExample.png" style="width: 800px;" /></a>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">MachineDesigner</span></code> requires two objects to be passed in on initialization: An <code class="docutils literal notranslate"><span class="pre">Architect</span></code> and a <code class="docutils literal notranslate"><span class="pre">SettingsHandler</span></code>. These object are defined as protocols and are responsible for the the creation of the <code class="docutils literal notranslate"><span class="pre">machine</span></code> and <code class="docutils literal notranslate"><span class="pre">settings</span></code> objects respectively.</p>
+</div>
+<div class="section" id="machineevaluator">
+<h3>MachineEvaluator<a class="headerlink" href="#machineevaluator" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">MachineEvaluator</span></code> class implements the <code class="docutils literal notranslate"><span class="pre">Evaluator</span></code> protocol from the <code class="docutils literal notranslate"><span class="pre">des_opt</span></code> module. This class extracts evaluation results from the <code class="docutils literal notranslate"><span class="pre">MachineDesign</span></code> object created by the <code class="docutils literal notranslate"><span class="pre">MachineDesigner</span></code>. The evaluation process is split into distinct steps which are described by an <code class="docutils literal notranslate"><span class="pre">EvaluationStep</span></code> protocol. These steps take in an input <code class="docutils literal notranslate"><span class="pre">state</span></code>, which holds the <code class="docutils literal notranslate"><span class="pre">MachineDesign</span></code> and any results from the previous evaluations, preform some evaluation on the design, and then add the results to the <code class="docutils literal notranslate"><span class="pre">state</span></code> object.</p>
+<p>In order to facilitate the use of generalized machine analysis, a concrete implementation of the <code class="docutils literal notranslate"><span class="pre">EvaluationStep</span></code> protocol is provided in the form of the <code class="docutils literal notranslate"><span class="pre">AnalysisStep</span></code>. This class is designed to handle the conversion of a user defined input ‘’state’’ to the form required for a specific <code class="docutils literal notranslate"><span class="pre">Analyzer</span></code>. The <code class="docutils literal notranslate"><span class="pre">AnalysisStep</span></code> class takes in three protocols on initialization:</p>
+<dl class="docutils">
+<dt>ProblemDefinition</dt>
+<dd>Converts the input <code class="docutils literal notranslate"><span class="pre">state</span></code> into a <code class="docutils literal notranslate"><span class="pre">problem</span></code> class which can be utilized by the <code class="docutils literal notranslate"><span class="pre">Analyzer</span></code></dd>
+<dt>Analyzer</dt>
+<dd>Performs an analysis on an problem. These are designed to handle specific analysis of complex machine design problems.</dd>
+<dt>PostAnalyzer</dt>
+<dd>Packages the results of the analysis and the initial state back into the the return state</dd>
+</dl>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="_images/AnalysisStepExample.png"><img alt="Trial1" src="_images/AnalysisStepExample.png" style="width: 800px;" /></a>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="rectangle_example.html" class="btn btn-neutral float-right" title="Rectangle Example" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="MachEval" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Severson Group.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
