@@ -39,8 +39,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="mach_opt module" href="mach_opt.html" />
-    <link rel="prev" title="architects.machines package" href="architects.machines.html" /> 
+    <link rel="next" title="MachEval Contribution Guidelines" href="documentation.html" />
+    <link rel="prev" title="des_opt module" href="des_opt.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,8 +94,8 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html"><em>MachEval</em></a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="architects.html">architects package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="des_opt.html">des_opt module</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">mach_eval module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mach_opt.html">mach_opt module</a></li>
 </ul>
 </li>
 </ul>
@@ -184,11 +184,10 @@ manner suitable for both machine optimization and evaluation.</p>
 <p>Class representing a step which involves detailed analysis.</p>
 <dl class="docutils">
 <dt>Attributes:</dt>
-<dd>problem_definition: class or object defining the problem to be analyzed. This attribute acts as the interface
-between the machine design and the analyzer.
-analyzer: class or object which evaluates any aspect of a machine design.
-post_analyzer: class or object which processes the results obtained from the analyzer and packages in a form
-suitable for subsequent steps.</dd>
+<dd><p class="first">problem_definition: class or object defining the problem to be analyzed. This attribute acts as the interface between the machine design and the analyzer.</p>
+<p>analyzer: class or object which evaluates any aspect of a machine design.</p>
+<p class="last">post_analyzer: class or object which processes the results obtained from the analyzer and packages in a form suitable for subsequent steps.</p>
+</dd>
 </dl>
 <dl class="method">
 <dt id="mach_eval.AnalysisStep.step">
@@ -198,8 +197,9 @@ suitable for subsequent steps.</dd>
 <dt>Args:</dt>
 <dd>state_in: input state which is to be evaluated.</dd>
 <dt>Returns:</dt>
-<dd>results: Results obtained from the analyzer.
-state_out: Output state to be used by the next step involved in the machine design evaluation.</dd>
+<dd><p class="first">results: Results obtained from the analyzer.</p>
+<p class="last">state_out: Output state to be used by the next step involved in the machine design evaluation.</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -291,8 +291,9 @@ design.</p>
 <p>Class representing a complete machine design, includes machine physical description and operating conditions.</p>
 <dl class="docutils">
 <dt>Attributes:</dt>
-<dd>machine: Holds information on machine dimensions, materials, and nameplate specs
-settings: Operating conditions of machine. Can include speed, current, expected power / torque etc.</dd>
+<dd><p class="first">machine: Holds information on machine dimensions, materials, and nameplate specs</p>
+<p class="last">settings: Operating conditions of machine. Can include speed, current, expected power / torque etc.</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -303,9 +304,10 @@ settings: Operating conditions of machine. Can include speed, current, expected 
 <p>Class representing a machine designer.</p>
 <dl class="docutils">
 <dt>Attributes:</dt>
-<dd>arch: Class which converts optimization free variables to a complete set of machine dimensions required to
-fully define a machine.
-settings_handler: Class which converts optimization free variable to machine operating conditions.</dd>
+<dd><p class="first">arch: Class which converts optimization free variables to a complete set of machine dimensions required to
+fully define a machine.</p>
+<p class="last">settings_handler: Class which converts optimization free variable to machine operating conditions.</p>
+</dd>
 </dl>
 <dl class="method">
 <dt id="mach_eval.MachineDesigner.create_design">
@@ -352,8 +354,9 @@ settings_handler: Class which converts optimization free variable to machine ope
 <p>Exception raised for errors in the input.</p>
 <dl class="docutils">
 <dt>Attributes:</dt>
-<dd>expression – input expression in which the error occurred
-message – explanation of the error</dd>
+<dd><p class="first">expression: input expression in which the error occurred</p>
+<p class="last">message: explanation of the error</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -420,8 +423,8 @@ conditions: additional information required for subsequent evaluation steps</dd>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="mach_opt.html" class="btn btn-neutral float-right" title="mach_opt module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="architects.machines.html" class="btn btn-neutral float-left" title="architects.machines package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="documentation.html" class="btn btn-neutral float-right" title="MachEval Contribution Guidelines" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="des_opt.html" class="btn btn-neutral float-left" title="des_opt module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

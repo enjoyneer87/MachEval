@@ -38,7 +38,9 @@
 
     
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="mach_eval module" href="mach_eval.html" />
+    <link rel="prev" title="architects.machines package" href="architects.machines.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -89,8 +91,13 @@
 <li class="toctree-l1"><a class="reference internal" href="rectangle_example.html">Rectangle Example</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Code:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="modules.html"><em>MachEval</em></a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html"><em>MachEval</em></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="architects.html">architects package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">des_opt module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mach_eval.html">mach_eval module</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Guidelines:</span></p>
 <ul>
@@ -143,6 +150,8 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html"><em>MachEval</em></a> &raquo;</li>
         
       <li>des_opt module</li>
     
@@ -209,10 +218,11 @@
 <p>Class to create, evaluate, and optimize designs</p>
 <dl class="docutils">
 <dt>Attributes:</dt>
-<dd>designer: Objects which convert free variables to a design.
-evaluator: Objects which evaluate the performance of different designs.
-design_space: Objects which characterizes the design space of the optimization.
-dh: Data handlers which enable saving optimization results and its resumption.</dd>
+<dd><p class="first">designer: Objects which convert free variables to a design.</p>
+<p>evaluator: Objects which evaluate the performance of different designs.</p>
+<p>design_space: Objects which characterizes the design space of the optimization.</p>
+<p class="last">dh: Data handlers which enable saving optimization results and its resumption.</p>
+</dd>
 </dl>
 <dl class="method">
 <dt id="des_opt.DesignProblem.fitness">
@@ -309,6 +319,10 @@ algorithm. It also saves the results and handles invalid designs.</p>
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="mach_eval.html" class="btn btn-neutral float-right" title="mach_eval module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="architects.machines.html" class="btn btn-neutral float-left" title="architects.machines package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 
