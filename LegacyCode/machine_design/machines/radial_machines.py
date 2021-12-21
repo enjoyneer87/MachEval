@@ -450,9 +450,11 @@ class DPNVWinding_IM(Winding_IM, MachineComponent):
         req_param = ('coil_groups',
                      'DPNV_or_SEPA',
                      'PoleSpecificNeutral',
+                     'PS_or_SC',
                      'pitch',
                      'number_parallel_branch',
                      'CommutatingSequenceD',
+                     "no_slot_per_pole",
                      )
         for cl in DPNVWinding_IM.__bases__:
             if cl.required_parameters() is not None:
@@ -465,6 +467,14 @@ class DPNVWinding_IM(Winding_IM, MachineComponent):
     @property
     def coil_groups(self):
         return self._machine_parameter_dict['coil_groups']
+
+    @property
+    def PS_or_SC(self):
+        return self._machine_parameter_dict['PS_or_SC']
+
+    @property
+    def no_slot_per_pole(self):
+        return self._machine_parameter_dict['no_slot_per_pole']
 
     @property
     def DPNV_or_SEPA(self):

@@ -117,11 +117,16 @@ class IM_Machine(Machine, IM_Rotor, Stator_IM, DPNVWinding_IM):
                 ,'DriveW_zQ'
                 ,'End_Ring_Resistance'
                 , 'Js'
+                ,'End_Ring_Resistance'
                 )
 
     @property
     def Length_AirGap(self):
         return self._machine_parameter_dict['Length_AirGap']
+
+    @property
+    def End_Ring_Resistance(self):
+        return self._machine_parameter_dict['End_Ring_Resistance']
 
     @property
     def l_st(self):
@@ -161,12 +166,24 @@ class IM_Machine(Machine, IM_Rotor, Stator_IM, DPNVWinding_IM):
         return self._machine_parameter_dict['BeariW_turns']
 
     @property
+    def DriveW_zQ(self):
+        return self._machine_parameter_dict['DriveW_zQ']
+
+    @property
+    def DriveW_Rs(self):
+        return self._machine_parameter_dict['DriveW_Rs']
+
+    @property
     def CurrentAmp_per_phase(self):
         return self._machine_parameter_dict['CurrentAmp_per_phase']
 
     @property
     def DriveW_CurrentAmp(self):
         return self._machine_parameter_dict['DriveW_CurrentAmp']
+
+    @property
+    def DriveW_Freq(self):
+        return self._machine_parameter_dict['DriveW_Freq']
 
     @property
     def mech_power(self):

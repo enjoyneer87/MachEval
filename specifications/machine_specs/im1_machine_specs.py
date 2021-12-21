@@ -43,7 +43,9 @@ DesignSpec = {
             "Ix_ratio"        : 0.975,
             "kw1" : 0.8666,
             "number_parallel_branch" : 2,
-            "rated_speed" : 8645
+            "rated_speed" : 8645,
+            "no_slot_per_pole" : 2.0,
+              "End_Ring_Resistance" : 0,
 
     }
 

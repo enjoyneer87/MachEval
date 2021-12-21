@@ -103,11 +103,14 @@ class IMArchitectType1(Architect):
             'DriveW_zQ': 10,
 
             # Not going to consider resistance for now
-            # 'DriveW_Rs': free_variables['DriveW_Rs'],
+            'DriveW_Rs': 1e-3,
+            'BeariW_Rs' : 1e-3,
+            'BeariW_Freq':500,
 
             'DriveW_CurrentAmp': 127.89733,
             'DriveW_CurrentAmpUsed': 127.89733 * 0.975,
             'BeariW_CurrentAmpUsed': 127.89733 * 0.025,
+            'BeariW_CurrentAmp' : 127.89733 * 0.025,
             'DriveW_Freq': 500,
 
             'Bar_Conductivity' : 47619047.61904761,
@@ -126,8 +129,10 @@ class IMArchitectType1(Architect):
             'PoleSpecificNeutral': self.__design_spec['PoleSpecificNeutral'],
             'number_parallel_branch': self.__design_spec['number_parallel_branch'],
             'DPNV_or_SEPA': self.__design_spec['DPNV_or_SEPA'],
-            'CommutatingSequenceD': self.__winding.CommutatingSequenceD
-
+            'CommutatingSequenceD': self.__winding.CommutatingSequenceD,
+            'PS_or_SC' : self.__design_spec['PS_or_SC'],
+            "no_slot_per_pole" : self.__design_spec["no_slot_per_pole"],
+            "End_Ring_Resistance" : self.__design_spec["End_Ring_Resistance"]
         }
 
         im_material = {

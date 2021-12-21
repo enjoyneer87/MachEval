@@ -23,6 +23,7 @@ FEMM_FEA_Configuration = {
     "designer.OnlyTableResults": False,
     "designer.Restart": False,
     "designer.JMAG_Scheduler": False,
+    "max_nonlinear_iteration" : 50,
 
     "designer.TranRef-StepPerCycle": 40,
     "designer.number_of_steps_1stTSS": 24,
