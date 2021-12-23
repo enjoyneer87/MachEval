@@ -5,6 +5,12 @@ def print(*arg, **kwarg):
 # -*- coding: utf-8 -*-
 # execfile(r'D:\Users\horyc\OneDrive - UW-Madison\ec_rotate.py') # , {'__name__': 'load'})
 
+import sys
+import os
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.dirname(SCRIPT_DIR))
+
 from math import cos, sin, pi
 import csv
 import logging

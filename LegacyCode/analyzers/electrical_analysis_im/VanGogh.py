@@ -2,7 +2,7 @@
 
 # from shapely.geometry import LineString, Point
 from math import tan, pi, atan, sqrt, sin, cos, copysign, atan2, asin, acos
-# import utility
+import utility
 from pylab import plt, np, mpl
 
 mpl.rcParams['mathtext.fontset'] = 'stix'
@@ -12,12 +12,9 @@ CUSTOM = 2
 JMAG = 1
 FEMM = 0
 
-__all__ = ['VanGogh']
 
 class VanGogh(object):
     """One VanGogh for both FEMM and JMAG"""
-
-    __all__ = None
 
     def __init__(self, im, child_index):
         self.im = im
@@ -548,8 +545,7 @@ class VanGogh(object):
         y_solutions[0] + centery, y_solutions[1] + centery)
 
 
-from .utility import csv_row_reader
-
+from utility import csv_row_reader
 
 
 class VanGogh_pyPlotter(VanGogh):
@@ -635,7 +631,7 @@ import pyx
 # text.preamble(r"\usepackage{ulem}")  # underlining text...
 # text.preamble(r"\usepackage{anyfontsize}")  # one way of scaling fonts (except math fonts)....
 
-# import PyX_Utility
+import PyX_Utility
 
 
 class VanGogh_TikZPlotter():

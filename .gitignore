@@ -38,3 +38,17 @@ run_data/
 
 # archive files
 *.pkl
+*.csv
+*.fem
+*.ans
+*.txt
+*.lock
+*.png
+*.jmdl
+*.jcf
+*.check
+*.error
+*.html
+*.jlog
+*.jplot
+*.tex

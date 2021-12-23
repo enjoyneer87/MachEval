@@ -1,6 +1,7 @@
 from time import time as clock_time
 import os
-from .FEMM_Solver import FEMM_Solver
+# from .FEMM_Solver import FEMM_Solver
+import logging
 
 
 class IM_EM_Analysis():
@@ -14,54 +15,120 @@ class IM_EM_Analysis():
         self.machine_variant = problem.machine
         self.operating_point = problem.operating_point
         problem.configuration = self.configuration
+
+        select_fea_config_dict = "#019 JMAG IM Nine Variables"
+        select_spec = "IM Q18p3y3 ps4 Qr12 Round Bar"
+
+        import sys, os
+        file_dir = os.path.dirname(__file__)
+        sys.path.append(file_dir)
+
+        import main_utility
+        data_folder_name = os.path.realpath(
+            f'{os.path.dirname(__file__)}/../_TEC_ISMB_2021_IM') + '/' + select_spec.replace(' ', '_') + '/'
+
+        output_dir, spec_input_dict, fea_config_dict = main_utility.load_settings(select_spec, select_fea_config_dict,data_folder_name)
+
+
+        fea_config_dict["designer.Show"] = False
+
+        import pyrhonen_procedure_as_function
+        spec = pyrhonen_procedure_as_function.desgin_specification(**spec_input_dict)
+
+        import acm_designer
+        acm_designer.acm_designer(fea_config_dict, spec_input_dict, spec, output_dir, select_spec,
+                                  select_fea_config_dict)
+
+
         ####################################################
         # 01 Setting project name and output folder
         ####################################################
-        self.project_name = 'proj_%d_' % (counter)
-        # Create output folder
-        if not os.path.isdir(self.configuration['JMAG_csv_folder']):
-            os.makedirs(self.configuration['JMAG_csv_folder'])
-
-        self.machine_variant.fea_config_dict = self.configuration
-        self.machine_variant.bool_initial_design = self.configuration['bool_initial_design']
-        self.machine_variant.ID = self.project_name
-        self.bool_run_in_JMAG_Script_Editor = False
-
-        print('Run greedy_search_for_breakdown_slip...')
-        femm_tic = clock_time()
-        self.femm_solver = FEMM_Solver(self.machine_variant, flag_read_from_jmag=False, freq=500)  # eddy+static
-        self.femm_solver.greedy_search_for_breakdown_slip(self.configuration['JMAG_csv_folder'], self.project_name,
-                                                          bool_run_in_JMAG_Script_Editor=self.bool_run_in_JMAG_Script_Editor,
-                                                          fraction=1)
-
-        slip_freq_breakdown_torque, breakdown_torque, breakdown_force = self.femm_solver.wait_greedy_search(femm_tic)
+        # self.project_name = 'proj_%d_' % (counter)
+        # # Create output folder
+        # if not os.path.isdir(self.configuration['JMAG_csv_folder']):
+        #     os.makedirs(self.configuration['JMAG_csv_folder'])
+        #
+        # self.machine_variant.fea_config_dict = self.configuration
+        # self.machine_variant.bool_initial_design = self.configuration['bool_initial_design']
+        # self.machine_variant.ID = self.project_name
+        # self.bool_run_in_JMAG_Script_Editor = False
+        #
+        # print('Run greedy_search_for_breakdown_slip...')
+        # femm_tic = clock_time()
+        # self.femm_solver = FEMM_Solver(self.machine_variant, flag_read_from_jmag=False, freq=500)  # eddy+static
+        # self.femm_solver.greedy_search_for_breakdown_slip(self.configuration['JMAG_csv_folder'], self.project_name,
+        #                                                   bool_run_in_JMAG_Script_Editor=self.bool_run_in_JMAG_Script_Editor,
+        #                                                   fraction=1)
+        #
+        # slip_freq_breakdown_torque, breakdown_torque, breakdown_force = self.femm_solver.wait_greedy_search(femm_tic)
 
         # print('Stack length', self.machine_variant.l_st)
-        if True:
-            number_of_steps_2ndTSS = self.configuration['designer.number_of_steps_2ndTSS']
-            from ..electrical_analysis.JMAG import JMAG
-            toolJd = JMAG(self.configuration)
-            app, attempts = toolJd.open(self.configuration['JMAG_csv_folder'])
-            model = app.GetModel(self.project_name)
-            DM = app.GetDataManager()
-            DM.CreatePointArray("point_array/timevsdivision", "SectionStepTable")
-            refarray = [[0 for i in range(3)] for j in range(3)]
-            refarray[0][0] = 0
-            refarray[0][1] = 1
-            refarray[0][2] = 50
-            refarray[1][0] = 0.5 / slip_freq_breakdown_torque  # 0.5 for 17.1.03l # 1 for 17.1.02y
-            refarray[1][1] = number_of_steps_2ndTSS  # 16 for 17.1.03l #32 for 17.1.02y
-            refarray[1][2] = 50
-            refarray[2][0] = refarray[1][0] + 0.5 / self.machine_variant.DriveW_Freq  # 0.5 for 17.1.03l
-            refarray[2][1] = number_of_steps_2ndTSS  # also modify range_ss! # don't forget to modify below!
-            refarray[2][2] = 50
-            DM.GetDataSet("SectionStepTable").SetTable(refarray)
-            number_of_total_steps = 1 + 2 * number_of_steps_2ndTSS  # [Double Check] don't forget to modify here!
-            study = self.add_study(app, model, self.configuration['JMAG_csv_folder'], choose_study_type='frequency')
-            study.GetStep().SetValue("Step", number_of_total_steps)
-            study.GetStep().SetValue("StepType", 3)
-            study.GetStep().SetTableProperty("Division", DM.GetDataSet("SectionStepTable"))
+        # if True:
+        #     number_of_steps_2ndTSS = self.configuration['designer.number_of_steps_2ndTSS']
+        #     from ..electrical_analysis.JMAG import JMAG
+        #     toolJd = JMAG(self.configuration)
+        #     app, attempts = toolJd.open(self.configuration['JMAG_csv_folder'])
+        #     model = app.GetModel(self.project_name)
+        #     DM = app.GetDataManager()
+        #     DM.CreatePointArray("point_array/timevsdivision", "SectionStepTable")
+        #     refarray = [[0 for i in range(3)] for j in range(3)]
+        #     refarray[0][0] = 0
+        #     refarray[0][1] = 1
+        #     refarray[0][2] = 50
+        #     refarray[1][0] = 0.5 / slip_freq_breakdown_torque  # 0.5 for 17.1.03l # 1 for 17.1.02y
+        #     refarray[1][1] = number_of_steps_2ndTSS  # 16 for 17.1.03l #32 for 17.1.02y
+        #     refarray[1][2] = 50
+        #     refarray[2][0] = refarray[1][0] + 0.5 / self.machine_variant.DriveW_Freq  # 0.5 for 17.1.03l
+        #     refarray[2][1] = number_of_steps_2ndTSS  # also modify range_ss! # don't forget to modify below!
+        #     refarray[2][2] = 50
+        #     DM.GetDataSet("SectionStepTable").SetTable(refarray)
+        #     number_of_total_steps = 1 + 2 * number_of_steps_2ndTSS  # [Double Check] don't forget to modify here!
+        #     study = self.add_study(app, model, self.configuration['JMAG_csv_folder'], choose_study_type='frequency')
+        #     study.GetStep().SetValue("Step", number_of_total_steps)
+        #     study.GetStep().SetValue("StepType", 3)
+        #     study.GetStep().SetTableProperty("Division", DM.GetDataSet("SectionStepTable"))
+        #
+        # self.run_study(self.machine_variant, app, study, clock_time())
 
+
+    def run_study(self, im_variant, app, study, toc):
+        logger = logging.getLogger(__name__)
+        if self.configuration['designer.JMAG_Scheduler'] == False:
+            print('Run jam.exe...')
+            # if run_list[1] == True:
+            try:
+                study.RunAllCases()
+            except Exception as error:
+                raise error
+            msg = 'Time spent on %s is %g s.' % (study.GetName(), clock_time() - toc)
+            logger.debug(msg)
+            print(msg)
+        else:
+            print('Submit to JMAG_Scheduler...')
+            job = study.CreateJob()
+            job.SetValue("Title", study.GetName())
+            job.SetValue("Queued", True)
+            job.Submit(False)  # Fallse:CurrentCase, True:AllCases
+            logger.debug('Submit %s to queue (Tran2TSS).' % (im_variant.individual_name))
+            # wait and check
+            # study.CheckForCaseResults()
+        app.Save()
+        # if the jcf file already exists, it pops a msg window
+        # study.WriteAllSolidJcf(self.dir_jcf, im_variant.model_name+study.GetName()+'Solid', True) # True : Outputs cases that do not have results
+        # study.WriteAllMeshJcf(self.dir_jcf, im_variant.model_name+study.GetName()+'Mesh', True)
+
+        # # run
+        # if self.fea_config_dict['JMAG_Scheduler'] == False:
+        #     study.RunAllCases()
+        #     app.Save()
+        # else:
+        #     job = study.CreateJob()
+        #     job.SetValue(u"Title", study.GetName())
+        #     job.SetValue(u"Queued", True)
+        #     job.Submit(True)
+        #     logger.debug('Submit %s to queue (Freq).'%(im_variant.individual_name))
+        #     # wait and check
+        #     # study.CheckForCaseResults()
 
 
     def add_study(self, app, model, dir_csv_output_folder, choose_study_type='frequency'):
