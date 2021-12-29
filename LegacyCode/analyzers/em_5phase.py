@@ -13,7 +13,7 @@ from .electrical_analysis.Location2D import Location2D
 EPS = 1e-2  # unit: mm
 
 
-class BSPM_EM_Analysis():
+class BSPM_EM_Analysis:
     def __init__(self, configuration):
         self.configuration = configuration
         self.counter = 0
@@ -87,7 +87,7 @@ class BSPM_EM_Analysis():
         return fea_rated_output
 
     def initial_excitation_bias_compensation_deg(self):
-        return 0
+        return -18
 
     @property
     def current_trms(self):
@@ -187,6 +187,20 @@ class BSPM_EM_Analysis():
         toolJd.iRotateCopy = self.rotorMagnet.notched_rotor.p * 2
         region2 = toolJd.prepareSection(list_regions, bRotateMerge=False)
 
+        # Sleeve
+        # sleeve = CrossSectInnerNotchedRotor.CrossSectSleeve(
+        #     name='Sleeve',
+        #     notched_magnet=self.rotorMagnet,
+        #     d_sleeve=self.machine_variant.d_sl * 1e3  # mm
+        # )
+        # list_regions = sleeve.draw(toolJd)
+        # toolJd.bMirror = False
+        # toolJd.iRotateCopy = self.rotorMagnet.notched_rotor.p * 2
+        # try:
+        #     regionS = toolJd.prepareSection(list_regions)
+        # except:
+        #     return False
+
         # Stator Core
         list_regions = self.stator_core.draw(toolJd)
         toolJd.bMirror = True
@@ -223,7 +237,7 @@ class BSPM_EM_Analysis():
         # id_sleeve = part_ID_list[int(2 + self.machine_variant.p * 2)]
         id_statorCore = part_ID_list[int(2 + self.machine_variant.p * 2) + 1]
         partIDRange_Coil = part_ID_list[
-                           int(1 + self.machine_variant.p * 2) + 2 : int(2 + self.machine_variant.p * 2) + 2 + int(
+                           int(1 + self.machine_variant.p * 2) + 2: int(2 + self.machine_variant.p * 2) + 2 + int(
                                self.machine_variant.Q * 2)]
 
         # model.SuppressPart(id_sleeve, 1)
@@ -646,133 +660,120 @@ class BSPM_EM_Analysis():
             # Star Connection_4 is GroupBD
 
             # placing Coils
-            y_offset = 0
-            study.GetCircuit().CreateComponent("Coil", "coil_Ua")
-            study.GetCircuit().CreateInstance("coil_Ua", x - 4, y + y_offset + 6)
-            study.GetCircuit().GetComponent("coil_Ua").SetValue("Turn", turns)
-            study.GetCircuit().GetComponent("coil_Ua").SetValue("Resistance", Rs)
-            study.GetCircuit().GetInstance("coil_Ua", 0).RotateTo(90)
+            y_offset = 4
+            study.GetCircuit().CreateComponent("Coil", "coil_U")
+            study.GetCircuit().CreateInstance("coil_U", x - 4, y + y_offset)
+            study.GetCircuit().GetComponent("coil_U").SetValue("Turn", turns)
+            study.GetCircuit().GetComponent("coil_U").SetValue("Resistance", Rs)
+            study.GetCircuit().GetInstance("coil_U", 0).RotateTo(90)
 
-            study.GetCircuit().CreateComponent("Coil", "coil_Ub")
-            study.GetCircuit().CreateInstance("coil_Ub", x, y + y_offset + 6)
-            study.GetCircuit().GetComponent("coil_Ub").SetValue("Turn", turns)
-            study.GetCircuit().GetComponent("coil_Ub").SetValue("Resistance", Rs)
-            study.GetCircuit().GetInstance("coil_Ub", 0).RotateTo(90)
+            study.GetCircuit().CreateComponent("Coil", "coil_V")
+            study.GetCircuit().CreateInstance("coil_V", x + 4, y + y_offset)
+            study.GetCircuit().GetComponent("coil_V").SetValue("Turn", turns)
+            study.GetCircuit().GetComponent("coil_V").SetValue("Resistance", Rs)
+            study.GetCircuit().GetInstance("coil_V", 0).RotateTo(90)
 
-            study.GetCircuit().CreateComponent("Coil", "coil_Va")
-            study.GetCircuit().CreateInstance("coil_Va", x + 10, y + y_offset - 6)
-            study.GetCircuit().GetComponent("coil_Va").SetValue("Turn", turns)
-            study.GetCircuit().GetComponent("coil_Va").SetValue("Resistance", Rs)
-            study.GetCircuit().GetInstance("coil_Va", 0).RotateTo(270)
+            study.GetCircuit().CreateComponent("Coil", "coil_W")
+            study.GetCircuit().CreateInstance("coil_W", x + 12, y + y_offset)
+            study.GetCircuit().GetComponent("coil_W").SetValue("Turn", turns)
+            study.GetCircuit().GetComponent("coil_W").SetValue("Resistance", Rs)
+            study.GetCircuit().GetInstance("coil_W", 0).RotateTo(90)
 
-            study.GetCircuit().CreateComponent("Coil", "coil_Vb")
-            study.GetCircuit().CreateInstance("coil_Vb", x + 6, y + y_offset - 6)
-            study.GetCircuit().GetComponent("coil_Vb").SetValue("Turn", turns)
-            study.GetCircuit().GetComponent("coil_Vb").SetValue("Resistance", Rs)
-            study.GetCircuit().GetInstance("coil_Vb", 0).RotateTo(270)
+            study.GetCircuit().CreateComponent("Coil", "coil_X")
+            study.GetCircuit().CreateInstance("coil_X", x + 20, y + y_offset)
+            study.GetCircuit().GetComponent("coil_X").SetValue("Turn", turns)
+            study.GetCircuit().GetComponent("coil_X").SetValue("Resistance", Rs)
+            study.GetCircuit().GetInstance("coil_X", 0).RotateTo(90)
 
-            study.GetCircuit().CreateComponent("Coil", "coil_Wa")
-            study.GetCircuit().CreateInstance("coil_Wa", x - 10, y + y_offset - 6)
-            study.GetCircuit().GetComponent("coil_Wa").SetValue("Turn", turns)
-            study.GetCircuit().GetComponent("coil_Wa").SetValue("Resistance", Rs)
-            study.GetCircuit().GetInstance("coil_Wa", 0).RotateTo(270)
+            study.GetCircuit().CreateComponent("Coil", "coil_Y")
+            study.GetCircuit().CreateInstance("coil_Y", x + 28, y + y_offset)
+            study.GetCircuit().GetComponent("coil_Y").SetValue("Turn", turns)
+            study.GetCircuit().GetComponent("coil_Y").SetValue("Resistance", Rs)
+            study.GetCircuit().GetInstance("coil_Y", 0).RotateTo(90)
 
-            study.GetCircuit().CreateComponent("Coil", "coil_Wb")
-            study.GetCircuit().CreateInstance("coil_Wb", x - 6, y + y_offset - 6)
-            study.GetCircuit().GetComponent("coil_Wb").SetValue("Turn", turns)
-            study.GetCircuit().GetComponent("coil_Wb").SetValue("Resistance", Rs)
-            study.GetCircuit().GetInstance("coil_Wb", 0).RotateTo(270)
+            # Connecting one side of Coils to GND
+            study.GetCircuit().CreateWire(x-4, y + y_offset-2, x, y + y_offset-2)
+            study.GetCircuit().CreateWire(x+4, y + y_offset-2, x, y + y_offset-2)
+            study.GetCircuit().CreateWire(x+12, y + y_offset-2, x, y + y_offset-2)
+            study.GetCircuit().CreateWire(x+20, y + y_offset-2, x, y + y_offset-2)
+            study.GetCircuit().CreateWire(x+28, y + y_offset-2, x, y + y_offset-2)
 
-            # Connecting same phase Coils
-            study.GetCircuit().CreateWire(x - 4, y + y_offset + 6 + 2, x, y + y_offset + 6 + 2)
-            study.GetCircuit().CreateWire(x + 10, y + y_offset - 6 - 2, x + 6, y + y_offset - 6 - 2)
-            study.GetCircuit().CreateWire(x - 10, y + y_offset - 6 - 2, x - 6, y + y_offset - 6 - 2)
-
-            # Connecting group B Coils to GND
-            study.GetCircuit().CreateWire(x, y + y_offset + 6 - 2, x, y + y_offset)
-            study.GetCircuit().CreateWire(x + 6, y + y_offset - 6 + 2, x, y + y_offset)
-            study.GetCircuit().CreateWire(x - 6, y + y_offset - 6 + 2, x, y + y_offset)
             study.GetCircuit().CreateComponent("Ground", "Ground")
-            study.GetCircuit().CreateInstance("Ground", x, y + y_offset - 2)
+            study.GetCircuit().CreateInstance("Ground", x, y + y_offset - 4)
 
             # Placing current sources
-            I1t = "CS_t-1"
-            I2t = "CS_t-2"
-            I3t = "CS_t-3"
-            study.GetCircuit().CreateComponent("CurrentSource", I1t)
-            study.GetCircuit().CreateInstance(I1t, x - 2, y + y_offset + 6 + 4)
-            study.GetCircuit().GetInstance(I1t, 0).RotateTo(90)
-            study.GetCircuit().CreateComponent("CurrentSource", I2t)
-            study.GetCircuit().CreateInstance(I2t, x + 8, y + y_offset - 6 - 4)
-            study.GetCircuit().GetInstance(I2t, 0).RotateTo(270)
-            study.GetCircuit().CreateComponent("CurrentSource", I3t)
-            study.GetCircuit().CreateInstance(I3t, x - 8, y + y_offset - 6 - 4)
-            study.GetCircuit().GetInstance(I3t, 0).RotateTo(270)
+            I1 = "CS_U"
+            I2 = "CS_V"
+            I3 = "CS_W"
+            I4 = "CS_X"
+            I5 = "CS_Y"
+            study.GetCircuit().CreateComponent("CurrentSource", I1)
+            study.GetCircuit().CreateInstance(I1, x - 4, y + y_offset + 4)
+            study.GetCircuit().GetInstance(I1, 0).RotateTo(90)
 
-            I1s = "CS_s-1"
-            I2s = "CS_s-2"
-            I3s = "CS_s-3"
-            study.GetCircuit().CreateComponent("CurrentSource", I1s)
-            study.GetCircuit().CreateInstance(I1s, x - 4 - 2, y + y_offset + 6 - 2)
-            study.GetCircuit().GetInstance(I1s, 0).RotateTo(0)
-            study.GetCircuit().CreateComponent("CurrentSource", I2s)
-            study.GetCircuit().CreateInstance(I2s, x + 10 + 2, y + y_offset - 6 + 2)
-            study.GetCircuit().GetInstance(I2s, 0).RotateTo(180)
-            study.GetCircuit().CreateComponent("CurrentSource", I3s)
-            study.GetCircuit().CreateInstance(I3s, x - 10 - 2, y + y_offset - 6 + 2)
-            study.GetCircuit().GetInstance(I3s, 0).RotateTo(0)
+            study.GetCircuit().CreateComponent("CurrentSource", I2)
+            study.GetCircuit().CreateInstance(I2, x + 4, y + y_offset + 4)
+            study.GetCircuit().GetInstance(I2, 0).RotateTo(90)
+
+            study.GetCircuit().CreateComponent("CurrentSource", I3)
+            study.GetCircuit().CreateInstance(I3, x + 12, y + y_offset + 4)
+            study.GetCircuit().GetInstance(I3, 0).RotateTo(90)
+
+            study.GetCircuit().CreateComponent("CurrentSource", I4)
+            study.GetCircuit().CreateInstance(I4, x + 20, y + y_offset + 4)
+            study.GetCircuit().GetInstance(I4, 0).RotateTo(90)
+
+            study.GetCircuit().CreateComponent("CurrentSource", I5)
+            study.GetCircuit().CreateInstance(I5, x + 28, y + y_offset + 4)
+            study.GetCircuit().GetInstance(I5, 0).RotateTo(90)
 
             # Setting current values
             func = app.FunctionFactory().Composite()
             f1 = app.FunctionFactory().Sin(ampT, freq, 0)
-            # "freq" variable cannot be used here. So pay extra attension when you create new case of a different freq.
-            func.AddFunction(f1)
-            study.GetCircuit().GetComponent(I1t).SetFunction(func)
-
-            func = app.FunctionFactory().Composite()
-            f1 = app.FunctionFactory().Sin(ampT, freq, -120)
-            func.AddFunction(f1)
-            study.GetCircuit().GetComponent(I2t).SetFunction(func)
-
-            func = app.FunctionFactory().Composite()
-            f1 = app.FunctionFactory().Sin(ampT, freq, -240)
-            func.AddFunction(f1)
-            study.GetCircuit().GetComponent(I3t).SetFunction(func)
-
-            func = app.FunctionFactory().Composite()
-            f1 = app.FunctionFactory().Sin(ampS, freq, 0)
-            f2 = app.FunctionFactory().Sin(-ampT / 2, freq, 0)
+            f2 = app.FunctionFactory().Sin(ampS, freq, 0)
             func.AddFunction(f1)
             func.AddFunction(f2)
-            study.GetCircuit().GetComponent(I1s).SetFunction(func)
+            study.GetCircuit().GetComponent(I1).SetFunction(func)
 
             func = app.FunctionFactory().Composite()
-            f1 = app.FunctionFactory().Sin(ampS, freq, 120)
-            f2 = app.FunctionFactory().Sin(-ampT / 2, freq, -120)
+            f1 = app.FunctionFactory().Sin(ampT, freq, -72)
+            f2 = app.FunctionFactory().Sin(ampS, freq, -144)
             func.AddFunction(f1)
             func.AddFunction(f2)
-            study.GetCircuit().GetComponent(I2s).SetFunction(func)
+            study.GetCircuit().GetComponent(I2).SetFunction(func)
 
             func = app.FunctionFactory().Composite()
-            f1 = app.FunctionFactory().Sin(ampS, freq, 240)
-            f2 = app.FunctionFactory().Sin(-ampT / 2, freq, -240)
+            f1 = app.FunctionFactory().Sin(ampT, freq, -144)
+            f2 = app.FunctionFactory().Sin(ampS, freq, -288)
             func.AddFunction(f1)
             func.AddFunction(f2)
-            study.GetCircuit().GetComponent(I3s).SetFunction(func)
+            study.GetCircuit().GetComponent(I3).SetFunction(func)
+
+            func = app.FunctionFactory().Composite()
+            f1 = app.FunctionFactory().Sin(ampT, freq, -216)
+            f2 = app.FunctionFactory().Sin(ampS, freq, -72)
+            func.AddFunction(f1)
+            func.AddFunction(f2)
+            study.GetCircuit().GetComponent(I4).SetFunction(func)
+
+            func = app.FunctionFactory().Composite()
+            f1 = app.FunctionFactory().Sin(ampT, freq, -288)
+            f2 = app.FunctionFactory().Sin(ampS, freq, -216)
+            func.AddFunction(f1)
+            func.AddFunction(f2)
+            study.GetCircuit().GetComponent(I5).SetFunction(func)
 
             # Terminal Voltage/Circuit Voltage: Check for outputting CSV results
-            study.GetCircuit().CreateTerminalLabel("Terminal_Us", 6, -14)
-            study.GetCircuit().CreateTerminalLabel("Terminal_Ws", 0, -6)
-            study.GetCircuit().CreateTerminalLabel("Terminal_Vs", 20, -6)
-            study.GetCircuit().CreateTerminalLabel("Terminal_Ut", 8, -18)
-            study.GetCircuit().CreateTerminalLabel("Terminal_Wt", 2, -2)
-            study.GetCircuit().CreateTerminalLabel("Terminal_Vt", 18, -2)
+            study.GetCircuit().CreateTerminalLabel("Terminal_U", x - 4, -1*(y + y_offset + 2))
+            study.GetCircuit().CreateTerminalLabel("Terminal_V", x + 4, -1*(y + y_offset + 2))
+            study.GetCircuit().CreateTerminalLabel("Terminal_W", x + 12, -1*(y + y_offset + 2))
+            study.GetCircuit().CreateTerminalLabel("Terminal_X", x + 20, -1*(y + y_offset + 2))
+            study.GetCircuit().CreateTerminalLabel("Terminal_Y", x + 28, -1*(y + y_offset + 2))
 
         current_tpeak = self.current_trms * np.sqrt(2)  # It, max current at torque terminal
         current_speak = self.current_srms * np.sqrt(2)  # Is, max current at suspension terminal Is+It/2
 
-        slot_area_utilizing_ratio = (current_tpeak / 2 + current_speak) / (
-                self.machine_variant.Rated_current * np.sqrt(2))
+        slot_area_utilizing_ratio = (current_tpeak + current_speak) / (self.machine_variant.Rated_current * np.sqrt(2))
         print('---Slot area utilizing ratio is', slot_area_utilizing_ratio)
         print('---Peak Current per coil :', self.machine_variant.Rated_current * np.sqrt(2))
         print('---Peak torque current :', current_tpeak)
@@ -783,32 +784,27 @@ class BSPM_EM_Analysis():
         circuit(self.machine_variant.p, self.machine_variant.Z_q, Rs=self.R_coil, ampT=current_tpeak,
                 ampS=current_speak, freq=self.excitation_freq)
 
-        for suffix, poles in zip(['a', 'b'], [self.machine_variant.p * 2,
-                                              self.machine_variant.ps * 2]):
-            for UVW in ['U', 'V', 'W']:
-                study.CreateCondition("FEMCoil", 'phase_' + UVW + suffix)
-                # link between FEM Coil Condition and Circuit FEM Coil
-                condition = study.GetCondition('phase_' + UVW + suffix)
-                condition.SetLink("coil_%s%s" % (UVW, suffix))
-                condition.GetSubCondition("untitled").SetName("delete")
+        for phase in ['U', 'V', 'W', 'X', 'Y']:
+            study.CreateCondition("FEMCoil", 'phase_' + phase)
+            # link between FEM Coil Condition and Circuit FEM Coil
+            condition = study.GetCondition('phase_' + phase)
+            condition.SetLink("coil_%s" % phase)
+            condition.GetSubCondition("untitled").SetName("delete")
+
         count = 0  # count indicates which slot the current rightlayer is in.
         index = 0
         dict_dir = {'+': 1, '-': 0}
         coil_pitch = self.machine_variant.pitch  # self.dict_coil_connection[0]
         # select the part (via `Set') to assign the FEM Coil condition
         for UVW, UpDown in zip(self.machine_variant.layer_phases[0], self.machine_variant.layer_polarity[0]):
-
             count += 1
-
-            condition = study.GetCondition('phase_' + UVW + self.machine_variant.coil_groups[index])
+            condition = study.GetCondition('phase_' + UVW)
 
             # right layer
-            # print (count, "Coil Set %d"%(count), end=' ')
             condition.CreateSubCondition("FEMCoilData", "Coil Set Right %d" % count)
             subcondition = condition.GetSubCondition("Coil Set Right %d" % count)
             subcondition.ClearParts()
-            subcondition.AddSet(model.GetSetList().GetSet("coil_%s%s%s %d" % ('right_', UVW, UpDown, count)),
-                                0)  # right layer
+            subcondition.AddSet(model.GetSetList().GetSet("coil_%s%s%s %d" % ('right_', UVW, UpDown, count)), 0)
             subcondition.SetValue("Direction2D", dict_dir[UpDown])
 
             # left layer
@@ -830,8 +826,8 @@ class BSPM_EM_Analysis():
             # Check if it is a distributed windg???
             if self.machine_variant.pitch == 1:
                 print('Concentrated winding!')
-                UVW = self.winding_layout.l_leftlayer1[index_leftlayer]
-                UpDown = self.winding_layout.l_leftlayer2[index_leftlayer]
+                UVW = self.machine_variant.layer_phases[1][index_leftlayer]
+                UpDown = self.machine_variant.layer_polarity[1][index_leftlayer]
             else:
                 if self.machine_variant.layer_phases[1][index_leftlayer] != UVW:
                     print('[Warn] Potential bug in your winding layout detected.')
@@ -840,7 +836,7 @@ class BSPM_EM_Analysis():
                     UpDown = '-'
                 else:
                     UpDown = '+'
-            # print (count_leftlayer, "Coil Set %d"%(count_leftlayer))
+
             condition.CreateSubCondition("FEMCoilData", "Coil Set Left %d" % count_leftlayer)
             subcondition = condition.GetSubCondition("Coil Set Left %d" % count_leftlayer)
             subcondition.ClearParts()
@@ -849,10 +845,9 @@ class BSPM_EM_Analysis():
             subcondition.SetValue("Direction2D", dict_dir[UpDown])
             index += 1
             # clean up
-            for suffix in ['a', 'b']:
-                for UVW in ['U', 'V', 'W']:
-                    condition = study.GetCondition('phase_' + UVW + suffix)
-                    condition.RemoveSubCondition("delete")
+            for phase in ['U', 'V', 'W', 'X', 'Y']:
+                condition = study.GetCondition('phase_' + phase)
+                condition.RemoveSubCondition("delete")
 
     def show(self, name, toString=False):
         attrs = list(vars(self).items())
@@ -918,11 +913,11 @@ class BSPM_EM_Analysis():
         curr_df = pd.read_csv(current_csv_path, skiprows=6)
         volt_df = pd.read_csv(voltage_csv_path,)
         volt_df.rename(columns={'Time, s': 'Time(s)', 'Terminal_Us [Case 1]': 'Terminal_Us',
-                                'Terminal_Ut [Case 1]': 'Terminal_Ut',
-                                'Terminal_Vs [Case 1]': 'Terminal_Vs',
-                                'Terminal_Vt [Case 1]': 'Terminal_Vt',
-                                'Terminal_Ws [Case 1]': 'Terminal_Ws',
-                                'Terminal_Wt [Case 1]': 'Terminal_Wt', }, inplace=True)
+                                'Terminal_U [Case 1]': 'Terminal_U',
+                                'Terminal_V [Case 1]': 'Terminal_V',
+                                'Terminal_W [Case 1]': 'Terminal_W',
+                                'Terminal_X [Case 1]': 'Terminal_X',
+                                'Terminal_Y [Case 1]': 'Terminal_Y', }, inplace=True)
 
         tor_df = pd.read_csv(torque_csv_path, skiprows=6)
         force_df = pd.read_csv(force_csv_path, skiprows=6)

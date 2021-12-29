@@ -25,40 +25,6 @@ class BSPM_EM_PostAnalyzer():
         results['eddy_current_loss'] = results['eddy_current_loss'].iloc[i:]
 
         ##############################################################################
-        ############################ calculating volumes ###########################
-        ##############################################################################
-        # volumes = {}
-        # # shaft volume
-        # machine = state_out.design.machine
-        # r_sh = machine.r_sh
-        # l_st = machine.l_st
-        # volumes['V_sh'] = np.pi*(r_sh**2)*l_st
-
-        # # rotor iron volume
-        # r_ro    = machine.r_ro
-        # alpha_m = machine.alpha_m*np.pi/180
-        # d_m     = machine.d_m
-        # d_mp    = machine.d_mp
-        # p       = machine.p
-        # volumes['V_rfe'] = np.pi*((r_ro-d_m)**2-r_sh**2)*l_st + (np.pi - p*alpha_m)*((r_ro-d_mp)**2 - 
-        # (r_ro-d_m)**2)*l_st
-
-        # # magnet volume
-        # volumes['V_rpm'] = p*alpha_m*(r_ro**2 - (r_ro-d_m)**2)*l_st
-
-        # # sleeve volume
-        # d_sl    = machine.d_sl
-        # volumes['V_rsl'] = np.pi*((r_ro+d_sl)**2 - r_ro**2)*l_st
-
-        # # Copper volume
-        # s_slot = machine.s_slot
-        # V_scu = machine.Q * self.l_coil * machine.Kcu * machine.s_slot /machine.no_of_layers
-
-        # r_so    = machine.r_so
-        # r_si    = machine.r_si
-        # volumes['V_sfe'] = np.pi*(r_so**2 - r_si**2)*l_st - 6*s_slot*l_st
-
-        ##############################################################################
         ############################ post processing #################################
         ##############################################################################
         torque_avg, torque_ripple = process_torque_data(results['torque'])
@@ -154,15 +120,15 @@ def process_force_data(force_df):
 
 
 def compute_vrms(voltage_df):
-    phase_voltage = voltage_df['Terminal_Wt']
+    phase_voltage = voltage_df['Terminal_W']
     rms_voltage = np.sqrt(sum(np.square(phase_voltage)) / len(phase_voltage))
     return rms_voltage
 
 
 def compute_power_factor(voltage_df, current_df, target_freq, numPeriodicalExtension=1000):
     mytime = current_df.index
-    voltage = voltage_df['Terminal_Wt']
-    current = current_df['coil_Wb']
+    voltage = voltage_df['Terminal_W']
+    current = current_df['coil_W']
 
     power_factor = compute_power_factor_from_half_period(voltage, current, mytime, targetFreq=target_freq,
                                                          numPeriodicalExtension=numPeriodicalExtension)

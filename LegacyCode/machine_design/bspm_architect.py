@@ -39,7 +39,8 @@ class BSPMArchitectType1(Architect):
         self.__air = specification.air
         self.__magnet_material = specification.magnet_material
         self.__shaft_material = specification.shaft_material
-        self.__winding = WindingLayout(DPNV_or_SEPA=True, Qs=self.__design_spec['Q'], p=self.__design_spec['p'])
+        self.__winding = WindingLayout(DPNV_or_SEPA=self.__design_spec['DPNV'], Qs=self.__design_spec['Q'],
+                                       p=self.__design_spec['p'])
 
     def create_new_design(self, x):
         """
