@@ -45,8 +45,7 @@ class BSPM_EM_PostAnalyzer():
         post_processing['Ea'] = Ea
 
         post_processing['copper_loss'] = results['copper_loss']
-        post_processing['rotor_iron_loss'] = results['iron_loss']['NotchedRotor'][0] \
-                                             + results['eddy_current_loss']['NotchedRotor'].mean()
+        post_processing['rotor_iron_loss'] = results['eddy_current_loss']['Shaft'].mean()
         post_processing['stator_iron_loss'] = results['iron_loss']['StatorCore'][0] \
                                               + results['eddy_current_loss']['StatorCore'].mean()
         post_processing['magnet_loss'] = results['eddy_current_loss']['Magnet'].mean()

@@ -91,7 +91,7 @@ class BSPM_EM_Analysis:
 
     @property
     def current_trms(self):
-        return 2 * self.operating_point.Iq * self.machine_variant.Rated_current
+        return self.operating_point.Iq * self.machine_variant.Rated_current
 
     @property
     def current_srms(self):
@@ -113,12 +113,12 @@ class BSPM_EM_Analysis:
     @property
     def R_coil(self):
         a_wire = (self.machine_variant.s_slot * self.machine_variant.Kcu) / (2 * self.machine_variant.Z_q)
-        return (self.l_coil * self.machine_variant.Z_q * self.machine_variant.Q / 6) / (
+        return (self.l_coil * self.machine_variant.Z_q * self.machine_variant.Q / 5) / (
                 self.machine_variant.coil_mat['copper_elec_conductivity'] * a_wire)
 
     @property
     def copper_loss(self):
-        return self.machine_variant.Q * ((self.current_trms / 2) ** 2 + self.current_srms ** 2) * self.R_coil
+        return self.machine_variant.Q * ((self.current_trms) ** 2 + self.current_srms ** 2) * self.R_coil
 
     def draw_machine(self, toolJd):
         ####################################################
@@ -167,13 +167,13 @@ class BSPM_EM_Analysis:
         # Drawing parts
         ####################################################
         # Rotor Core
-        list_segments = self.rotorCore.draw(toolJd)
-        toolJd.bMirror = False
-        toolJd.iRotateCopy = self.rotorMagnet.notched_rotor.p * 2
-        try:
-            region1 = toolJd.prepareSection(list_segments)
-        except:
-            return False
+        # list_segments = self.rotorCore.draw(toolJd)
+        # toolJd.bMirror = False
+        # toolJd.iRotateCopy = self.rotorMagnet.notched_rotor.p * 2
+        # try:
+        #     region1 = toolJd.prepareSection(list_segments)
+        # except:
+        #     return False
 
         # Shaft
         list_segments = self.shaft.draw(toolJd)
@@ -227,17 +227,16 @@ class BSPM_EM_Analysis:
 
         part_ID_list = model.GetPartIDs()
 
-        if len(part_ID_list) != int(1 + 1 + self.machine_variant.p * 2 + 1 + self.machine_variant.Q * 2):
+        if len(part_ID_list) != int(1 + self.machine_variant.p * 2 + 1 + self.machine_variant.Q * 2):
             print('Parts are missing in this machine')
             return False
 
-        self.id_backiron = id_backiron = part_ID_list[0]
-        id_shaft = part_ID_list[1]
-        partIDRange_Magnet = part_ID_list[2:int(2 + self.machine_variant.p * 2)]
+        id_shaft = part_ID_list[0]
+        partIDRange_Magnet = part_ID_list[1:int(1 + self.machine_variant.p * 2)]
         # id_sleeve = part_ID_list[int(2 + self.machine_variant.p * 2)]
-        id_statorCore = part_ID_list[int(2 + self.machine_variant.p * 2) + 1]
+        id_statorCore = part_ID_list[int(2 + self.machine_variant.p * 2)]
         partIDRange_Coil = part_ID_list[
-                           int(1 + self.machine_variant.p * 2) + 2: int(2 + self.machine_variant.p * 2) + 2 + int(
+                           int(self.machine_variant.p * 2) + 2: int(2 + self.machine_variant.p * 2) + 2 + int(
                                self.machine_variant.Q * 2)]
 
         # model.SuppressPart(id_sleeve, 1)
@@ -323,7 +322,7 @@ class BSPM_EM_Analysis:
                     sel.SelectPart(ID)
             model.GetSetList().GetSet(name).AddSelected(sel)
 
-        part_list_set('Motion_Region', list_xy_magnets, list_part_id=[id_backiron, id_shaft])
+        part_list_set('Motion_Region', list_xy_magnets, list_part_id=[id_shaft])
 
         part_list_set('MagnetSet', list_xy_magnets)
         return True
@@ -388,7 +387,7 @@ class BSPM_EM_Analysis:
             # too many threads will in turn make them compete with each other and slow down the solve. 2 is good enough
             # for eddy current solve. 6~8 is enough for transient solve.
             study.GetStudyProperties().SetValue("UseMultiCPU", True)
-            study.GetStudyProperties().SetValue("MultiCPU", 2)
+            study.GetStudyProperties().SetValue("MultiCPU", 4)
 
             # two sections of different time step
         if True:
@@ -454,7 +453,7 @@ class BSPM_EM_Analysis:
         study.GetStudyProperties().SetValue("DeleteResultFiles", self.configuration['delete_results_after_calculation'])
 
         # Rotor
-        if True:
+        if False:
             cond = study.CreateCondition("Ironloss", "IronLossConRotor")
             cond.SetValue("BasicFrequencyType", 2)
             cond.SetValue("BasicFrequency", "freq")
@@ -564,48 +563,6 @@ class BSPM_EM_Analysis:
             "ShearModulusYZ", 0)
         app.GetMaterialLibrary().GetUserMaterial(self.machine_variant.stator_iron_mat['core_material']).SetValue(
             "ShearModulusZX", 0)
-        app.GetMaterialLibrary().GetUserMaterial(self.machine_variant.stator_iron_mat['core_material']).SetValue("G11",
-                                                                                                                 0)
-        app.GetMaterialLibrary().GetUserMaterial(self.machine_variant.stator_iron_mat['core_material']).SetValue("G12",
-                                                                                                                 0)
-        app.GetMaterialLibrary().GetUserMaterial(self.machine_variant.stator_iron_mat['core_material']).SetValue("G13",
-                                                                                                                 0)
-        app.GetMaterialLibrary().GetUserMaterial(self.machine_variant.stator_iron_mat['core_material']).SetValue("G14",
-                                                                                                                 0)
-        app.GetMaterialLibrary().GetUserMaterial(self.machine_variant.stator_iron_mat['core_material']).SetValue("G15",
-                                                                                                                 0)
-        app.GetMaterialLibrary().GetUserMaterial(self.machine_variant.stator_iron_mat['core_material']).SetValue("G16",
-                                                                                                                 0)
-        app.GetMaterialLibrary().GetUserMaterial(self.machine_variant.stator_iron_mat['core_material']).SetValue("G22",
-                                                                                                                 0)
-        app.GetMaterialLibrary().GetUserMaterial(self.machine_variant.stator_iron_mat['core_material']).SetValue("G23",
-                                                                                                                 0)
-        app.GetMaterialLibrary().GetUserMaterial(self.machine_variant.stator_iron_mat['core_material']).SetValue("G24",
-                                                                                                                 0)
-        app.GetMaterialLibrary().GetUserMaterial(self.machine_variant.stator_iron_mat['core_material']).SetValue("G25",
-                                                                                                                 0)
-        app.GetMaterialLibrary().GetUserMaterial(self.machine_variant.stator_iron_mat['core_material']).SetValue("G26",
-                                                                                                                 0)
-        app.GetMaterialLibrary().GetUserMaterial(self.machine_variant.stator_iron_mat['core_material']).SetValue("G33",
-                                                                                                                 0)
-        app.GetMaterialLibrary().GetUserMaterial(self.machine_variant.stator_iron_mat['core_material']).SetValue("G34",
-                                                                                                                 0)
-        app.GetMaterialLibrary().GetUserMaterial(self.machine_variant.stator_iron_mat['core_material']).SetValue("G35",
-                                                                                                                 0)
-        app.GetMaterialLibrary().GetUserMaterial(self.machine_variant.stator_iron_mat['core_material']).SetValue("G36",
-                                                                                                                 0)
-        app.GetMaterialLibrary().GetUserMaterial(self.machine_variant.stator_iron_mat['core_material']).SetValue("G44",
-                                                                                                                 0)
-        app.GetMaterialLibrary().GetUserMaterial(self.machine_variant.stator_iron_mat['core_material']).SetValue("G45",
-                                                                                                                 0)
-        app.GetMaterialLibrary().GetUserMaterial(self.machine_variant.stator_iron_mat['core_material']).SetValue("G46",
-                                                                                                                 0)
-        app.GetMaterialLibrary().GetUserMaterial(self.machine_variant.stator_iron_mat['core_material']).SetValue("G55",
-                                                                                                                 0)
-        app.GetMaterialLibrary().GetUserMaterial(self.machine_variant.stator_iron_mat['core_material']).SetValue("G56",
-                                                                                                                 0)
-        app.GetMaterialLibrary().GetUserMaterial(self.machine_variant.stator_iron_mat['core_material']).SetValue("G66",
-                                                                                                                 0)
         app.GetMaterialLibrary().GetUserMaterial(self.machine_variant.stator_iron_mat['core_material']).SetValue(
             "MagnetizationSaturated2", 0)
         app.GetMaterialLibrary().GetUserMaterial(self.machine_variant.stator_iron_mat['core_material']).SetValue(
@@ -647,6 +604,10 @@ class BSPM_EM_Analysis:
         study.GetMaterial(u"Magnet").SetOriginXYZ(0, 0, 0)
         study.GetMaterial(u"Magnet").SetPattern(u"ParallelCircular")
         study.GetMaterial(u"Magnet").SetValue(u"StartAngle", 0.5 * self.machine_variant.alpha_m)
+
+        study.SetMaterialByName("Shaft", self.machine_variant.shaft_mat['shaft_material'])
+        study.GetMaterial("Shaft").SetValue("Laminated", 0)
+        study.GetMaterial("Shaft").SetValue("EddyCurrentCalculation", 1)
 
     def add_circuit(self, app, model, study, bool_3PhaseCurrentSource=True):
         # Circuit - Current Source
