@@ -55,6 +55,8 @@ class BSPM_EM_PostAnalyzer():
                                                                target_freq=machine.mech_omega * machine.p / (2 * np.pi))
 
         state_out.conditions.em = post_processing
+        state_out.design.machine.name = results['name']
+        
         return state_out
 
 

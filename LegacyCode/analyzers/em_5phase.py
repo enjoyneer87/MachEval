@@ -18,7 +18,7 @@ class BSPM_EM_Analysis:
         self.configuration = configuration
         self.counter = 0
 
-    def analyze(self, problem, counter=0):
+    def analyze(self, problem):
         self.counter = self.counter + 1
         self.machine_variant = problem.machine
         self.operating_point = problem.operating_point
@@ -906,7 +906,8 @@ class BSPM_EM_Analysis:
             'hysteresis_loss': hyst_df,
             'eddy_current_loss': eddy_df,
             'copper_loss': self.copper_loss,
-            'range_fine_step': range_2TS
+            'range_fine_step': range_2TS,
+            'name' : self.project_name
         }
 
         return fea_data

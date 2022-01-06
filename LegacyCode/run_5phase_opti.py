@@ -143,26 +143,25 @@ windage_step = AnalysisStep(therm.WindageProblemDef, therm.WindageLossAnalyzer, 
 evaluator = MachineEvaluator([struct_step, em_step, thermal_step, windage_step])
 
 # run optimization
-bp2 = (0.00275, 60, 5.43e-3, 15.09e-3, 16.94e-3, 13.54e-3, 180.0, 3.41e-3)
-design = bspm_designer.create_design(bp2)
+bp2 = (0.00275, 60, 5.43e-3, 15.09e-3, 16.94e-3, 13.54e-3)
+# design = bspm_designer.create_design(bp2)
 
 # Evaluate BP2 machine alone
 # results = evaluator.evaluate(design)
 
 # set bounds for pygmo optimization problem
 bounds = [
-    [0.9 * bp2[0], 1.1 * bp2[0]],  # delta_e
-    [0.9 * bp2[1], 1.1 * bp2[1]],  # alpha_st
-    [0.9 * bp2[2], 1.1 * bp2[2]],  # d_so
-    [0.9 * bp2[3], 1.1 * bp2[3]],  # w_st
-    [0.9 * bp2[4], 1.1 * bp2[4]],  # d_st
-    [0.9 * bp2[5], 1.1 * bp2[5]],  # d_sy
-    [0.99 * bp2[6], 1 * bp2[6]],  # alpha_m
-    [1 * bp2[7], 1.1 * bp2[7]],  # d_m
+    [0.8 * bp2[0], 2.5 * bp2[0]],  # delta_e
+    [0.4 * bp2[1], 1.1 * bp2[1]],  # alpha_st
+    [0.2 * bp2[2], 3 * bp2[2]],  # d_so
+    [0.25 * bp2[3], 2.5 * bp2[3]],  # w_st
+    [0.2 * bp2[4], 1.5 * bp2[4]],  # d_st
+    [0.2 * bp2[5], 1 * bp2[5]],  # d_sy
+    [0, 3 * bp2[2]],  # del_dsp
 ]
 
 path = os.path.abspath('')
-arch_file = path + r'\opti_arch.pkl'  # specify path where saved data will reside
+arch_file = path + r'\opti_archive.pkl'  # specify path where saved data will reside
 des_file = path + r'\opti_designer.pkl'
 pop_file = path + r'\latest_pop.csv'
 dh = DataHandler(arch_file, des_file)  # initialize data handler with required file paths
@@ -180,5 +179,6 @@ gen_size = 10
 
 population = design_opt.load_pop(filepath=pop_file, pop_size=pop_size)
 if population is None:
+    print("New population")
     population = design_opt.initial_pop(pop_size)
 pop = design_opt.run_optimization(population, gen_size, pop_file)

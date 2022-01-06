@@ -38,3 +38,4 @@ run_data/
 
 # archive files
 *.pkl
+*.csv

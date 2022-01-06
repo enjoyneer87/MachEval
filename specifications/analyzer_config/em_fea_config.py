@@ -4,10 +4,10 @@ JMAG_FEA_Configuration = {
     # FEA Setting
     ##########################
     'TranRef-StepPerCycle': 40,
-    'number_of_revolution_1TS': 3,
-    'number_of_revolution_2TS': 0.5,
+    'number_of_revolution_1TS': 1/8,
+    'number_of_revolution_2TS': 1,
     'number_of_steps_per_rev_1TS': 8,  # Should be TSS actually... Also, number_of_steps_1stTTS is not implemented.
-    'number_of_steps_per_rev_2TS': 64,
+    'number_of_steps_per_rev_2TS': 128,
     # use a multiples of 4! # 8*32 # steps for half period (0.5). That is, we implement two time sections, the 1st
     # section lasts half slip period and the 2nd section lasts half fundamental period.
     'number_cycles_prolonged': 1,  # 150
@@ -19,9 +19,9 @@ JMAG_FEA_Configuration = {
     ##########################
     # Mesh settings
     ##########################
-    'mesh_size': 4 * 1e-3,  # m
-    'mesh_magnet_size': 2 * 1e-3,  # m
-    'mesh_radial_division': 7,
+    'mesh_size': 2 * 1e-3,  # m
+    'mesh_magnet_size': 1 * 1e-3,  # m
+    'mesh_radial_division': 5,
     'mesh_circum_division': 720,
     'mesh_air_region_scale': 1.15,
 

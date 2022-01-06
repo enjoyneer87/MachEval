@@ -71,8 +71,8 @@ class BSPMArchitectType2(Architect):
             'w_st': free_variables['w_st'],
             'd_st': free_variables['d_st'],
             'd_sy': free_variables['d_sy'],
-            'alpha_m': free_variables['alpha_m'],
-            'd_m': free_variables['d_m'],
+            'alpha_m': 180,
+            'd_m': 4.5e-3,
             'd_mp': 0,
             'd_ri': 0,
             # dependant variables
@@ -134,7 +134,8 @@ class BSPMArchitectType2(Architect):
 
     def __get_d_sp(self, free_variables):
         d_so = free_variables['d_so']
-        return 1.5 * d_so
+        del_dsp = free_variables['del_dsp']
+        return d_so + del_dsp
 
     def __get_r_si(self, free_variables):
         delta_e = free_variables['delta_e']
@@ -142,14 +143,14 @@ class BSPMArchitectType2(Architect):
         return r_ro + delta_e
 
     def __get_alpha_ms(self, free_variables):
-        alpha_m = free_variables['alpha_m']
+        alpha_m = 180
         return alpha_m
 
     def __get_d_ms(self, free_variables):
         return 0
 
     def __get_r_sh(self, free_variables):
-        return 24e-3/2-free_variables['d_m']
+        return 24e-3/2-4.5e-3
 
     def __get_r_so(self, free_variables):
         r_si = self.__get_r_si(free_variables)
@@ -176,7 +177,7 @@ class BSPMArchitectType2(Architect):
 
     def __get_V_r(self, free_variables):
         l_st = self.__get_l_st(free_variables)
-        r_ro = free_variables['d_m']+25e-3/2
+        r_ro = 24e-3/2
         V_r = np.pi * r_ro ** 2 * l_st
         return V_r
 
@@ -196,7 +197,6 @@ class BSPMArchitectType2(Architect):
             'w_st': x[3],
             'd_st': x[4],
             'd_sy': x[5],
-            'alpha_m': x[6],
-            'd_m': x[7],
+            'del_dsp': x[6]
         }
         return free_variables

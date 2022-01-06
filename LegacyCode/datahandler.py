@@ -1,5 +1,6 @@
 import sys
 import pickle
+import pygmo as pg
 
 sys.path.append("..")
 
@@ -29,3 +30,51 @@ class DataHandler(do.DataHandler):
     def save_designer(self, designer):
         with open(self.designer_filepath, 'wb') as des:
             pickle.dump(designer, des, -1)
+            
+    def get_archive_data(self):
+        archive = self.load_from_archive()
+        fitness = []
+        free_vars = []
+        for data in archive:
+            fitness.append(data.objs)
+            free_vars.append(data.x)
+        return fitness, free_vars
+    
+    def get_pareto_designs(self):
+        archive = self.load_from_archive()
+        fitness, free_vars = self.get_archive_data()
+        
+        ndf, dl, dc, ndr = pg.fast_non_dominated_sorting(fitness)
+        fronts_index = ndf[0]
+        
+        i = 0
+        for data in archive:
+            if i in fronts_index:
+                yield data
+            i = i+1
+    
+    def get_pareto_data(self):
+        archive = self.get_pareto_designs()
+        fitness = []
+        free_vars = []
+        for data in archive:
+            fitness.append(data.objs)
+            free_vars.append(data.x)
+        return fitness, free_vars
+
+    def get_designs(self):
+        archive = self.load_from_archive()
+        i = 0
+        for data in archive:
+            final_state = data.full_results[-1][-1]
+            Ea = final_state.conditions.em["Ea"]
+            i = i+1
+            if data.objs[0]<-6 and Ea<10 and data.objs[2]<15:
+                print(i)
+                print(data.objs, Ea)
+        print(i)
+                
+            
+
+
+    

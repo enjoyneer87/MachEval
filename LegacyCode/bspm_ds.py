@@ -34,8 +34,11 @@ class BSPMDesignSpace:
                      machine.V_rPM * magnet['magnet_material_density'] + \
                      machine.V_sfe * stator_iron['core_material_density'] + \
                      machine.V_scu * coil['coil_material_density']
+            
+            em_results = final_state.conditions.em
+            power = em_results['torque_avg'] * machine.mech_omega
 
-            f1 = weight
+            f1 = -1 * 0.001*power/weight    # power density kW/kg
             f2 = -1 * final_state.conditions.windage['efficiency']
 
             em_results = final_state.conditions.em
