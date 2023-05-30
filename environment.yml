@@ -1,0 +1,22 @@
+name: eMach
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  - matplotlib=3.5.1
+  - numpy=1.22.2
+  - scipy=1.8.0
+  - pandas=1.4.1
+  - pygmo=2.18.0
+  # documentation packages
+  - sphinx=4.4.0
+  - sphinx_rtd_theme
+  
+  # to use pip packages, follow syntax below
+  # - pip
+  # - pip:
+  #    - sphinx-rtd-theme
+  
+
+

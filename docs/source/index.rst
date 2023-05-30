@@ -1,42 +1,63 @@
-.. figure:: /images/MachEval.png
+.. figure:: images/eMach.svg
    :alt: Trial1 
    :align: center
-   :width: 800 
+   :width: 300 
 
 
-MachEval
+Welcome to eMach
 =======================================================
-MachEval is a code base designed to assist in the evaluation and optimization of electric machines. There are two primary modules: ``desopt`` which extends ``pygmo`` to handle design optimization, and ``macheval`` for evaluation and analysis of electric machines. ``macheval`` is designed to interface directly with ``emach``, a code base for modeling of electrical machines using FEA tooling.
+``eMach`` is a open-source electric machine modeling, evaluation, and optimization framework developed in Python. ``eMach`` has 3 
+distinct submodules, ``mach_cad``,  ``mach_eval``, and ``mach_opt``, all 3 of which work in tandem to enable the implementation of
+modular solutions to electric machine optimization problems. Readers are adviced to go through the remainder the documentation 
+links provided on the left to familiarize themselves with the repository.
+
 
 .. toctree::
+   :hidden:
    :maxdepth: 1
-   :caption: Code Base Overview
+   :caption: Getting Started
    
-   getting_started
-   rectangle_example
-   toy_example
-   publications
+   getting_started/pre_reqs
+   getting_started/tutorials/index
+   user_guide
    
 .. toctree::
+   :hidden:
+   :maxdepth: 3
+   :caption: Analyzers
+
+   EM_analyzers/index
+   mechanical_analyzers/index
+   
+.. toctree::
+   :hidden:
+   :maxdepth: 3
+   :caption: Machine Designs
+
+   machines/bspm/index
+
+..
+   Please!! Do not remove/modify the following INSERT comment. This allows a script to insert additional rst content into the index file.
+   
+..
+   _INSERT
+
+
+.. toctree::
+   :hidden:
    :maxdepth: 1
-   :caption: BSPM Analyzers
-   
-   structural_analyzer
-   thermal_analyzer
+   :caption: Guidelines
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Guidelines:
-	
-   documentation
-   auto_docs
+   contribution
+   
    
 
 .. toctree::
+   :hidden:
    :maxdepth: 2
-   :caption: Code:
+   :caption: Code
 
-   modules
+   auto_docs/modules
 
 
    
